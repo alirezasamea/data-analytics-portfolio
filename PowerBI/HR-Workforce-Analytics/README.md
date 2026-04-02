@@ -69,7 +69,7 @@ A high-level snapshot of the workforce. Includes 5 KPI cards, headcount by depar
 ---
 
 ### Page 2 — Attrition Analysis
-![Attrition Analysis](screenshots/Attrition Analysis.png)
+![Attrition Analysis](screenshots/Attrition%20Analysis.png)
 
 A deep dive into attrition drivers across multiple dimensions. This page answers the question: *who is leaving and why?*
 
@@ -82,7 +82,7 @@ A deep dive into attrition drivers across multiple dimensions. This page answers
 ---
 
 ### Page 3 — Retention Risk
-![Retention Risk](screenshots/Retention Risk.png)
+![Retention Risk](screenshots/Retention%20Risk.png)
 
 Focuses on actionable retention insights. Includes a written recommendations panel summarizing key findings and suggested HR interventions.
 
@@ -100,10 +100,10 @@ Focuses on actionable retention insights. Includes a written recommendations pan
 Hover over any department or age group bar to see a contextual breakdown popup.
 
 **Department Tooltip** — shows attrition rate by job role within the selected department:
-![Tooltip Department](screenshots/Tooltip - Department.png)
+![Tooltip Department](screenshots/Tooltip%20-%20Department.png)
 
 **Age Group Tooltip** — shows average monthly income for the selected age group:
-![Tooltip Age](screenshots/Tooltip - Age.png)
+![Tooltip Age](screenshots/Tooltip%20-%20Age.png)
 
 ### Conditional Formatting
 The Attrition Rate KPI card changes color based on the current value:

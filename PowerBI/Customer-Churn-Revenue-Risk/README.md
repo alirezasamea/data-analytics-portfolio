@@ -1,7 +1,7 @@
 # Customer Churn Analytics Dashboard
 A Multi-Page Power BI Project
 
-![Data Model](Screenshots/Data Model.png)
+![Customer Churn Analysis](Screenshots/Overview.png)
 
 ---
 
@@ -50,7 +50,6 @@ Customer-Churn-Analytics/
     ├── Drivers.png
     ├── Segmentation.png
     └── Tooltip - Revenue at Risk.png
-    └── Tooltip - Revenue at Risk.png
 ```
 
 ---
@@ -59,7 +58,7 @@ Customer-Churn-Analytics/
 
 Rather than working from a single flat table, this project implements a **star schema** to improve scalability and analytical clarity.
 
-![Customer Churn Analysis](Screenshots/Data Model.png)
+![Data Model](Screenshots/Data Model.png)
 
 **Fact Table**
 - `Fact_Subscriptions` — one row per customer, contains churn status, monthly charges, tenure, and the foreign keys that connect to each dimension table

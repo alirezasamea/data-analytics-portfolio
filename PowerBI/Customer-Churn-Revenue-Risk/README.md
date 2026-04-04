@@ -58,7 +58,7 @@ Customer-Churn-Analytics/
 
 Rather than working from a single flat table, this project implements a **star schema** to improve scalability and analytical clarity.
 
-![Data Model](Screenshots/Data Model.png)
+![Data Model](Screenshots/Data-Model.png)
 
 **Fact Table**
 - `Fact_Subscriptions` — one row per customer, contains churn status, monthly charges, tenure, and the foreign keys that connect to each dimension table

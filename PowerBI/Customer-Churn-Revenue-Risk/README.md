@@ -7,11 +7,9 @@ A Multi-Page Power BI Project
 
 ## About This Project
 
-This Power BI project analyzes customer churn behavior for a telecommunications company and translates the findings into actionable business insights.
+This is a Power BI project I built to analyze customer churn for a telecommunications company. It starts from a raw flat file and ends with a three-page interactive dashboard that answers a real business question: **What drives customer churn, and how can we reduce its impact?**
 
-The central business question is: **What drives customer churn, and how can we reduce its impact?**
-
-Unlike a basic churn dashboard, this project goes further by implementing a star schema data model, rule-based customer segmentation, and an interactive churn reduction simulator — techniques that reflect how BI is actually done in practice.
+I designed it so students can follow along from scratch and end up with something portfolio-worthy. The project goes beyond basic charting by implementing a star schema data model, rule-based customer segmentation, and an interactive churn reduction simulator. These are all techniques you would encounter in an actual BI role.
 
 **Dataset:** [Telco Customer Churn Dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn), publicly available on Kaggle, 7,043 customer records, 21 columns.
 
@@ -45,7 +43,7 @@ Customer-Churn-Analytics/
 ├── churn_dashboard.pbix
 ├── README.md
 └── Screenshots/
-    ├── Data Model.png
+    ├── Data-Model.png
     ├── Overview.png
     ├── Drivers.png
     ├── Segmentation.png
@@ -61,23 +59,23 @@ Rather than working from a single flat table, this project implements a **star s
 ![Data Model](Screenshots/Data-Model.png)
 
 **Fact Table**
-- `Fact_Subscriptions` — one row per customer, contains churn status, monthly charges, tenure, and the foreign keys that connect to each dimension table
+- `Fact_Subscriptions`: one row per customer, contains churn status, monthly charges, tenure, and the foreign keys that connect to each dimension table
 
 **Dimension Tables**
-- `Dim_Customers` — demographic attributes (gender, senior citizen status, partner, dependents), connected via `customerID`
-- `Dim_Contract` — contract type and billing preferences, connected via `ContractKey`
-- `Dim_Services` — internet, phone, and add-on service subscriptions, connected via `ServiceKey`
+- `Dim_Customers`: demographic attributes (gender, senior citizen status, partner, dependents), connected via `customerID`
+- `Dim_Contract`: contract type and billing preferences, connected via `ContractKey`
+- `Dim_Services`: internet, phone, and add-on service subscriptions, connected via `ServiceKey`
 
 **Relationships**
 - `Fact_Subscriptions[customerID]` → `Dim_Customers[customerID]` (many-to-one)
 - `Fact_Subscriptions[ContractKey]` → `Dim_Contract[ContractKey]` (many-to-one)
 - `Fact_Subscriptions[ServiceKey]` → `Dim_Services[ServiceKey]` (many-to-one)
 
-> **Why a star schema?** A flat table works fine for small, simple reports. But separating facts from dimensions makes the model easier to maintain, easier to extend, and signals to anyone who opens your file that you understand data modeling principles — not just how to drag fields onto a canvas.
+> **Why a star schema?** A flat table works fine for small, simple reports. But separating facts from dimensions makes the model easier to maintain, easier to extend, and signals to anyone who opens your file that you understand data modeling principles. Not just how to drag fields onto a canvas.
 
-> **Why surrogate keys (ContractKey, ServiceKey)?** Rather than joining every table through `customerID`, this model uses dedicated integer keys for `Dim_Contract` and `Dim_Services`. This is standard practice in data warehousing — surrogate keys are faster for joins and decouple the model from natural keys that could change in the source system. In Power BI, they also give you explicit control over which column defines the relationship.
+> **Why surrogate keys (ContractKey, ServiceKey)?** Rather than joining every table through `customerID`, this model uses dedicated integer keys for `Dim_Contract` and `Dim_Services`. This is standard practice in data warehousing. Surrogate keys are faster for joins and decouple the model from natural keys that could change in the source system. In Power BI, they also give you explicit control over which column defines the relationship.
 
-> **Why many-to-one, not one-to-one?** The fact table sits on the "many" side of every relationship because it is the central table that references the dimensions. Each dimension record (one contract type, one service bundle) can in theory be shared by multiple customers. Power BI enforces referential integrity through this directionality, which also controls how filters flow between tables — filters always flow from the dimension (one side) into the fact table (many side), not the other way around.
+> **Why many-to-one, not one-to-one?** The fact table sits on the "many" side of every relationship because it is the central table that references the dimensions. Each dimension record (one contract type, one service bundle) can in theory be shared by multiple customers. Power BI enforces referential integrity through this directionality, which also controls how filters flow between tables. Filters always flow from the dimension (one side) into the fact table (many side), not the other way around.
 
 > **Why RELATED()?** Since the segmentation logic needs attributes from `Dim_Contract` and `Dim_Services`, but the calculated column lives in `Fact_Subscriptions`, we use `RELATED()` to look up values across the relationship. This only works because the relationships are properly defined and filters flow in the correct direction.
 
@@ -130,9 +128,9 @@ In Model view, connect the tables using the appropriate keys:
 - `Fact_Subscriptions[ContractKey]` → `Dim_Contract[ContractKey]` (many-to-one)
 - `Fact_Subscriptions[ServiceKey]` → `Dim_Services[ServiceKey]` (many-to-one)
 
-The fact table sits on the many (*) side and each dimension sits on the one (1) side. This means filters flow from the dimension tables into the fact table — for example, selecting a contract type in a slicer filters down the rows in `Fact_Subscriptions` automatically.
+The fact table sits on the many (*) side and each dimension sits on the one (1) side. This means filters flow from the dimension tables into the fact table. For example, selecting a contract type in a slicer filters down the rows in `Fact_Subscriptions` automatically.
 
-> **Why not just use customerID for everything?** You could — and it would work since each customer appears once in every table. But using dedicated surrogate keys (`ContractKey`, `ServiceKey`) is cleaner data modeling practice. It makes the purpose of each relationship explicit and mirrors how relationships are defined in real data warehouses.
+> **Why not just use customerID for everything?** You could, and it would work since each customer appears once in every table. But using dedicated surrogate keys (`ContractKey`, `ServiceKey`) is cleaner data modeling practice. It makes the purpose of each relationship explicit and mirrors how relationships are defined in real data warehouses.
 
 ---
 
@@ -183,7 +181,7 @@ Instead of storing measures inside a data table, create a dedicated table to kee
 
 Always click on the `_Measures` table first before creating a new measure.
 
-**Core measures — build these first:**
+**Core measures build these first:**
 ```dax
 Total Customers = COUNTROWS(Fact_Subscriptions)
 
@@ -206,9 +204,9 @@ CALCULATE(
 Revenue at Risk % = DIVIDE([Churned Monthly Revenue], [Total Monthly Revenue], 0)
 ```
 
-> **Why is Revenue at Risk % (30.50%) higher than Churn Rate (26.54%)?** These measure different things. Churn Rate counts customers lost as a share of total customers. Revenue at Risk counts revenue lost as a share of total revenue. Churned customers spend an average of $74.44 per month versus $61.27 for retained customers — because high-usage customers (fiber optic, multiple services) churn more. So fewer customers account for a disproportionately large share of lost revenue.
+> **Why is Revenue at Risk % (30.50%) higher than Churn Rate (26.54%)?** These measure different things. Churn Rate counts customers lost as a share of total customers. Revenue at Risk counts revenue lost as a share of total revenue. Churned customers spend an average of $74.44 per month versus $61.27 for retained customers because high-usage customers (fiber optic, multiple services) churn more. So fewer customers account for a disproportionately large share of lost revenue.
 
-**Average charge measures — for the Revenue at Risk tooltip:**
+**Average charge measures for the Revenue at Risk tooltip:**
 ```dax
 Avg Monthly Charge (Churned) = 
 [Churned Monthly Revenue] / [Churned Customers]
@@ -218,7 +216,7 @@ Avg Monthly Charge (Retained) =
 ([Total Customers] - [Churned Customers])
 ```
 
-**Simulator measures — build these after creating the what-if parameter:**
+**Simulator measures -- build these after creating the what-if parameter:**
 ```dax
 Adjusted Churned Customers =
 [Churned Customers] * (1 - 'Churn Reduction %'[Churn Reduction % Value])
@@ -285,9 +283,9 @@ SWITCH(
 )
 ```
 
-> **How the segmentation logic works:** The three attributes used — contract type, internet service type, and tech support — were chosen because the data shows they are the strongest combined predictors of churn. Month-to-month fiber optic customers without tech support churn at 54.61%. Adding tech support drops that to around 30%. Long-term contract customers churn at under 12% regardless of other attributes. The segmentation reflects these patterns.
+> **How the segmentation logic works:** The three attributes used (contract type, internet service type, and tech support) were chosen because the data shows they are the strongest combined predictors of churn. Month-to-month fiber optic customers without tech support churn at 54.61%. Adding tech support drops that to around 30%. Long-term contract customers churn at under 12% regardless of other attributes. The segmentation reflects these patterns.
 
-> **Important note on the Medium Risk fallback:** Customers who are month-to-month but do not have fiber optic also fall into "Medium Risk" by default. This means Medium Risk is a mixed group — some are elevated risk due to contract type, others are moderate risk for other reasons. This is a design simplification, not an analytical error.
+> **Important note on the Medium Risk fallback:** Customers who are month-to-month but do not have fiber optic also fall into "Medium Risk" by default. This means Medium Risk is a mixed group. Some are elevated risk due to contract type, others are moderate risk for other reasons. This is a design simplification, not an analytical error.
 
 ---
 
@@ -296,7 +294,7 @@ SWITCH(
 1. Modeling tab -> New Parameter -> Numeric Range
 2. Name it `Churn Reduction %`
 3. Set Minimum: 0, Maximum: 1, Increment: 0.01, Default: 0
-4. Click OK — Power BI automatically creates the parameter table and a slicer
+4. Click OK Power BI automatically creates the parameter table and a slicer
 
 This parameter feeds the simulator measures on Page 1.
 
@@ -348,9 +346,9 @@ This gives your report a clean, professional appearance without manually styling
 - Tile Slicer: Tenure Band (Filter by Tenure)
 - Tile Slicer: Gender (Filter by Gender)
 
-> **Why include Senior Citizen?** Senior customers churn at 41.68% versus 23.61% for non-seniors — nearly double. This is a meaningful gap that warrants targeted retention offers for this segment.
+> **Why include Senior Citizen?** Senior customers churn at 41.68% versus 23.61% for non-seniors, which is nearly double. This is a meaningful gap that warrants targeted retention offers for this segment.
 
-> **Why exclude Phone Service?** Phone service shows a 26.71% vs 24.93% churn rate — a 1.78 percentage point gap that is not analytically meaningful. Including it would imply it is a churn driver when the data says it is not. Choosing what to exclude is as important as choosing what to include.
+> **Why exclude Phone Service?** Phone service shows a 26.71% vs 24.93% churn rate, a 1.78 percentage point gap that is not analytically meaningful. Including it would imply it is a churn driver when the data says it is not. Choosing what to exclude is as important as choosing what to include.
 
 ---
 
@@ -409,12 +407,12 @@ When hovering over the **Revenue at Risk % (of Monthly)** KPI card on Page 1, th
 ### Page 2 - Churn Drivers Analysis
 ![Churn Drivers Analysis](Screenshots/Drivers.png)
 
-Identifies the specific attributes most strongly associated with churn. The contract × internet service matrix is the centerpiece — it shows how risk compounds when multiple factors combine.
+Identifies the specific attributes most strongly associated with churn. The contract x internet service matrix is the centerpiece. It shows how risk compounds when multiple factors combine.
 
 **What the data shows:**
-- Month-to-month fiber optic customers churn at 54.61% — the highest risk combination
+- Month-to-month fiber optic customers churn at 54.61%, the highest risk combination in the dataset
 - Customers without tech support churn at 41.64% versus 15.17% with support
-- Electronic check users churn at 45.29% — though this likely correlates with month-to-month contracts rather than being an independent driver
+- Electronic check users churn at 45.29%, though this likely correlates with month-to-month contracts rather than being an independent driver
 - Senior customers churn at 41.68% versus 23.61% for non-seniors
 
 ---
@@ -428,7 +426,7 @@ Translates the driver analysis into a prioritized action framework. The three se
 - High Risk: 1,796 customers, 57.52% churn rate, $153,546 monthly revenue at risk
 - Medium Risk: 2,079 customers, 29.92% churn rate, $103,748 monthly revenue
 - Low Risk: 3,168 customers, 6.76% churn rate, $198,822 monthly revenue
-- High Risk customers generate ~$85/month on average versus ~$63 for Low Risk — making retention ROI significantly higher for this segment
+- High Risk customers generate ~$85/month on average versus ~$63 for Low Risk, which makes retention ROI significantly higher for this segment
 
 ---
 
@@ -437,7 +435,7 @@ Translates the driver analysis into a prioritized action framework. The three se
 | Finding | Value | Implication |
 |---------|-------|-------------|
 | Overall churn rate | 26.54% | Above typical industry benchmarks of 15-25% |
-| Highest risk combination | Month-to-month + Fiber optic + No tech support | 54.61% churn — immediate retention priority |
+| Highest risk combination | Month-to-month + Fiber optic + No tech support | 54.61% churn, immediate retention priority |
 | Contract impact | 42.71% vs 2.83% | Month-to-month customers churn 15x more than two-year customers |
 | Tech support impact | 41.64% vs 15.17% | Lack of tech support nearly triples churn risk |
 | Senior citizen impact | 41.68% vs 23.61% | Seniors churn at nearly double the rate of non-seniors |
@@ -459,7 +457,7 @@ Translates the driver analysis into a prioritized action framework. The three se
 
 | Skill | Details |
 |-------|---------|
-| Data Modeling | Star schema design, fact/dimension separation, one-to-one relationships |
+| Data Modeling | Star schema design, fact/dimension separation, many-to-one relationships |
 | Power Query | Flat file splitting, data type correction, custom grouping columns |
 | DAX | CALCULATE, DIVIDE, SWITCH, RELATED, IF, what-if parameters |
 | Segmentation | Rule-based customer grouping using multi-condition SWITCH logic |
@@ -480,4 +478,4 @@ Translates the driver analysis into a prioritized action framework. The three se
 
 ---
 
-*Dataset: Telco Customer Churn — publicly available on Kaggle, originally shared by IBM.*
+*Dataset: Telco Customer Churn, publicly available on Kaggle, originally shared by IBM.*

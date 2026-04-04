@@ -45,6 +45,7 @@ Customer-Churn-Analytics/
 ├── churn_dashboard.pbix
 ├── README.md
 └── Screenshots/
+    ├── Data Model.png
     ├── Overview.png
     ├── Drivers.png
     ├── Segmentation.png
@@ -58,17 +59,28 @@ Customer-Churn-Analytics/
 
 Rather than working from a single flat table, this project implements a **star schema** to improve scalability and analytical clarity.
 
+![Data Model](Screenshots/Data Model.png)
+
 **Fact Table**
-- `Fact_Subscriptions` — one row per customer, contains churn status, monthly charges, and tenure
+- `Fact_Subscriptions` — one row per customer, contains churn status, monthly charges, tenure, and the foreign keys that connect to each dimension table
 
 **Dimension Tables**
-- `Dim_Customers` — demographic attributes (gender, senior citizen status, partner, dependents)
-- `Dim_Contract` — contract type and billing preferences
-- `Dim_Services` — internet, phone, and add-on service subscriptions
+- `Dim_Customers` — demographic attributes (gender, senior citizen status, partner, dependents), connected via `customerID`
+- `Dim_Contract` — contract type and billing preferences, connected via `ContractKey`
+- `Dim_Services` — internet, phone, and add-on service subscriptions, connected via `ServiceKey`
+
+**Relationships**
+- `Fact_Subscriptions[customerID]` → `Dim_Customers[customerID]` (many-to-one)
+- `Fact_Subscriptions[ContractKey]` → `Dim_Contract[ContractKey]` (many-to-one)
+- `Fact_Subscriptions[ServiceKey]` → `Dim_Services[ServiceKey]` (many-to-one)
 
 > **Why a star schema?** A flat table works fine for small, simple reports. But separating facts from dimensions makes the model easier to maintain, easier to extend, and signals to anyone who opens your file that you understand data modeling principles — not just how to drag fields onto a canvas.
 
-> **Why RELATED()?** Since the segmentation logic needs attributes from `Dim_Contract` and `Dim_Services`, but the calculated column lives in `Fact_Subscriptions`, we use `RELATED()` to look up values across the relationship. This only works because the star schema relationships are properly defined.
+> **Why surrogate keys (ContractKey, ServiceKey)?** Rather than joining every table through `customerID`, this model uses dedicated integer keys for `Dim_Contract` and `Dim_Services`. This is standard practice in data warehousing — surrogate keys are faster for joins and decouple the model from natural keys that could change in the source system. In Power BI, they also give you explicit control over which column defines the relationship.
+
+> **Why many-to-one, not one-to-one?** The fact table sits on the "many" side of every relationship because it is the central table that references the dimensions. Each dimension record (one contract type, one service bundle) can in theory be shared by multiple customers. Power BI enforces referential integrity through this directionality, which also controls how filters flow between tables — filters always flow from the dimension (one side) into the fact table (many side), not the other way around.
+
+> **Why RELATED()?** Since the segmentation logic needs attributes from `Dim_Contract` and `Dim_Services`, but the calculated column lives in `Fact_Subscriptions`, we use `RELATED()` to look up values across the relationship. This only works because the relationships are properly defined and filters flow in the correct direction.
 
 ---
 
@@ -99,14 +111,14 @@ Now create your dimension tables by duplicating and trimming the fact table:
 
 **Dim_Contract:**
 - Duplicate again, rename to `Dim_Contract`
-- Keep only: `customerID`, `Contract`, `PaperlessBilling`, `PaymentMethod`
+- Keep only: `ContractKey`, `Contract`, `PaperlessBilling`, `PaymentMethod`
 
 **Dim_Services:**
 - Duplicate again, rename to `Dim_Services`
-- Keep only: `customerID`, `PhoneService`, `MultipleLines`, `InternetService`, `OnlineSecurity`, `OnlineBackup`, `DeviceProtection`, `TechSupport`, `StreamingTV`, `StreamingMovies`
+- Keep only: `ServiceKey`, `PhoneService`, `MultipleLines`, `InternetService`, `OnlineSecurity`, `OnlineBackup`, `DeviceProtection`, `TechSupport`, `StreamingTV`, `StreamingMovies`
 
 **Fact_Subscriptions:**
-- Remove all columns that now live in the dimension tables, keeping: `customerID`, `tenure`, `MonthlyCharges`, `TotalCharges`, `Churn`
+- Remove all columns that now live in the dimension tables, keeping: `customerID`, `ContractKey`, `ServiceKey`, `tenure`, `MonthlyCharges`, `TotalCharges`, `Churn`
 
 6. Click **Close and Apply**
 
@@ -114,12 +126,14 @@ Now create your dimension tables by duplicating and trimming the fact table:
 
 ### Step 3 - Define Relationships
 
-In Model view, connect the tables through `customerID`:
-- `Fact_Subscriptions[customerID]` → `Dim_Customers[customerID]`
-- `Fact_Subscriptions[customerID]` → `Dim_Contract[customerID]`
-- `Fact_Subscriptions[customerID]` → `Dim_Services[customerID]`
+In Model view, connect the tables using the appropriate keys:
+- `Fact_Subscriptions[customerID]` → `Dim_Customers[customerID]` (many-to-one)
+- `Fact_Subscriptions[ContractKey]` → `Dim_Contract[ContractKey]` (many-to-one)
+- `Fact_Subscriptions[ServiceKey]` → `Dim_Services[ServiceKey]` (many-to-one)
 
-All relationships should be one-to-one since each customer appears exactly once in every table.
+The fact table sits on the many (*) side and each dimension sits on the one (1) side. This means filters flow from the dimension tables into the fact table — for example, selecting a contract type in a slicer filters down the rows in `Fact_Subscriptions` automatically.
+
+> **Why not just use customerID for everything?** You could — and it would work since each customer appears once in every table. But using dedicated surrogate keys (`ContractKey`, `ServiceKey`) is cleaner data modeling practice. It makes the purpose of each relationship explicit and mirrors how relationships are defined in real data warehouses.
 
 ---
 

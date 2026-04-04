@@ -1,7 +1,7 @@
 # Customer Churn Analytics Dashboard
 A Multi-Page Power BI Project
 
-![Customer Churn Analysis](Screenshots/Overview.png)
+![Data Model](Screenshots/Data Model.png)
 
 ---
 

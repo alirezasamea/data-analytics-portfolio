@@ -7,11 +7,9 @@ A Multi-Page Power BI Project
 
 ## About This Project
 
-This Power BI project analyzes customer churn behavior for a telecommunications company and translates the findings into actionable business insights.
+This is a Power BI project I built to analyze customer churn for a telecommunications company — starting from a raw flat file and ending with a three-page interactive dashboard that answers a real business question: **What drives customer churn, and how can we reduce its impact?**
 
-The central business question is: **What drives customer churn, and how can we reduce its impact?**
-
-Unlike a basic churn dashboard, this project goes further by implementing a star schema data model, rule-based customer segmentation, and an interactive churn reduction simulator — techniques that reflect how BI is actually done in practice.
+I designed it so students can follow along from scratch and end up with something portfolio-worthy. The project goes beyond basic charting by implementing a star schema data model, rule-based customer segmentation, and an interactive churn reduction simulator — all techniques you would encounter in an actual BI role.
 
 **Dataset:** [Telco Customer Churn Dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn), publicly available on Kaggle, 7,043 customer records, 21 columns.
 
@@ -45,7 +43,7 @@ Customer-Churn-Analytics/
 ├── churn_dashboard.pbix
 ├── README.md
 └── Screenshots/
-    ├── Data Model.png
+    ├── Data-Model.png
     ├── Overview.png
     ├── Drivers.png
     ├── Segmentation.png
@@ -459,7 +457,7 @@ Translates the driver analysis into a prioritized action framework. The three se
 
 | Skill | Details |
 |-------|---------|
-| Data Modeling | Star schema design, fact/dimension separation, one-to-one relationships |
+| Data Modeling | Star schema design, fact/dimension separation, many-to-one relationships |
 | Power Query | Flat file splitting, data type correction, custom grouping columns |
 | DAX | CALCULATE, DIVIDE, SWITCH, RELATED, IF, what-if parameters |
 | Segmentation | Rule-based customer grouping using multi-condition SWITCH logic |

@@ -1,7 +1,7 @@
 # USA Real Estate Market Dashboard
 A Beginner-Friendly Power BI Project
 
-![Market Overview](screenshots/Market%20Overview.png)
+![Market Overview](Screenshots/Market%20Overview.png)
 
 ---
 
@@ -47,7 +47,7 @@ After finishing this project you will be able to:
 USA-Real-Estate-Dashboard/
 ├── USA_Real_Estate.pbix              
 ├── README.md                 
-└── screenshots/
+└── Screenshots/
     ├── Market Overview.png
     ├── Property Analysis.png
     ├── Location Intelligence.png
@@ -61,7 +61,7 @@ USA-Real-Estate-Dashboard/
 ## Dashboard Pages
 
 ### Page 1 - Market Overview
-![Market Overview](screenshots/Market%20Overview.png)
+![Market Overview](Screenshots/Market%20Overview.png)
 
 This is the first page a user lands on. It gives a high-level snapshot of the entire US real estate market with 5 KPI cards, avg price by state, total listings by state, and a listing status breakdown. Slicers let the user filter everything by Status and State.
 
@@ -80,7 +80,7 @@ The Average Price card uses conditional formatting:
 ---
 
 ### Page 2 - Property Analysis
-![Property Analysis](screenshots/Property%20Analysis.png)
+![Property Analysis](Screenshots/Property%20Analysis.png)
 
 This page digs into property characteristics. The main question here is: what types of properties exist and how does price vary by property features?
 
@@ -99,7 +99,7 @@ This page digs into property characteristics. The main question here is: what ty
 ---
 
 ### Page 3 - Location Intelligence
-![Location Intelligence](screenshots/Location%20Intelligence.png)
+![Location Intelligence](Screenshots/Location%20Intelligence.png)
 
 This page focuses on geographic patterns. The main question here is: where are the most expensive and most active markets?
 
@@ -120,7 +120,7 @@ This page focuses on geographic patterns. The main question here is: where are t
 ---
 
 ### Page 4 - Market Intelligence
-![Market Intelligence](screenshots/Market%20Intelligence.png)
+![Market Intelligence](Screenshots/Market%20Intelligence.png)
 
 This is the most analytically advanced page. It answers: which states are the most strategically valuable markets, and how is affordability distributed across the country?
 

@@ -29,3 +29,24 @@ cancellations, pricing, and guest behavior — and what can hotel managers do ab
 4. **Hypothesis Testing** — inferential statistics to test key business assumptions
 5. **Cancellation Analysis** — what predicts whether a booking gets cancelled
 6. **Key Insights and Recommendations** — summary of findings for hotel management
+
+---
+
+## Section 1: Data Loading and Exploration
+### 1.1 Load Libraries
+library(tidyverse)
+library(knitr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -56,6 +56,10 @@ The most technically demanding project. You will build a star schema data model 
 
 ---
 
+More projects will be added to this folder as the portfolio grows.
+
+---
+
 ## Skills Progression
 
 | Skill | HR Analytics | Real Estate | Customer Churn |

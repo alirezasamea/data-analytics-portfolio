@@ -246,3 +246,160 @@ ggplot(hotel_data, aes(x = hotel, fill = hotel)) +
 
 City hotels account for roughly twice the number of bookings compared to resort hotels, 
 suggesting they are the more dominant hotel type in this dataset.
+
+### 3.2 Bookings by Month
+
+We look at how bookings are distributed across the months of the year to identify 
+seasonal patterns. Note that months are displayed in correct calendar order because 
+we converted `arrival_date_month` to an ordered factor in Section 2.4.
+```{r}
+ggplot(hotel_data, aes(x = arrival_date_month, fill = arrival_date_month)) +
+  geom_bar() +
+  labs(title = "Booking Volume by Month",
+       x = "Month",
+       y = "Number of Bookings") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none")
+```
+
+Bookings peak during the summer months of July and August and reach their lowest point 
+in January and February, reflecting a clear seasonal demand pattern typical in the 
+hospitality industry.
+
+### 3.3 Cancellation Rate by Hotel Type
+
+We compare the proportion of cancelled bookings between city hotels and resort hotels. 
+Understanding which hotel type has a higher cancellation rate helps managers plan 
+overbooking strategies and resource allocation.
+```{r}
+ggplot(hotel_data, aes(x = hotel, fill = is_canceled)) +
+  geom_bar(position = "fill") +
+  labs(title = "Cancellation Rate by Hotel Type",
+       x = "Hotel Type",
+       y = "Proportion",
+       fill = "Cancelled") +
+  scale_y_continuous(labels = scales::percent) +
+  theme_minimal()
+```
+
+City hotels have a noticeably higher cancellation rate compared to resort hotels, suggesting that city hotel bookings are more likely to be speculative or subject to last minute changes.
+
+### 3.4 Average Daily Rate by Hotel Type
+
+We compare the average daily rate (ADR) between city hotels and resort hotels using a boxplot. ADR represents the average revenue earned per occupied room per day and is one of the most important pricing metrics in the hospitality industry.
+```{r}
+ggplot(hotel_data, aes(x = hotel, y = adr, fill = hotel)) +
+  geom_boxplot() +
+  coord_cartesian(ylim = c(0, 500)) +
+  labs(title = "Average Daily Rate by Hotel Type",
+       x = "Hotel Type",
+       y = "Average Daily Rate (ADR)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+Note: The y axis is capped at 500 for readability. A small number of extreme outliers above this threshold exist in the data but are excluded from the display to avoid compressing the main distribution.
+
+Resort hotels show a wider spread in ADR compared to city hotels, suggesting more variable pricing likely driven by seasonality. City hotels have a more consistent and slightly higher median ADR.
+
+### 3.5 Average Daily Rate by Month
+
+We look at how ADR changes across months to understand seasonal pricing patterns. 
+This helps hotel managers understand when demand and revenue are highest.
+```{r}
+ggplot(hotel_data, aes(x = arrival_date_month, y = adr, fill = arrival_date_month)) +
+  geom_boxplot() +
+  coord_cartesian(ylim = c(0, 500)) +
+  labs(title = "Average Daily Rate by Month",
+       x = "Month",
+       y = "Average Daily Rate (ADR)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none")
+```
+
+ADR peaks during the summer months of July and August, consistent with the higher booking volumes we saw in Section 3.2. This confirms that summer is the high season where hotels can charge premium prices.
+
+### 3.6 Cancellation Rate by Month
+
+We examine whether cancellation rates vary by month. A high cancellation rate in certain months could significantly impact revenue even when booking volumes are high.
+```{r}
+ggplot(hotel_data, aes(x = arrival_date_month, fill = is_canceled)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  labs(title = "Cancellation Rate by Month",
+       x = "Month",
+       y = "Proportion",
+       fill = "Cancelled") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+Cancellation rates are fairly consistent across all months, hovering between 20% and 35%. There is a slight increase in cancellations during spring and early summer months (March through August), while January, November, and December show the lowest cancellation rates.
+
+### 3.7 Lead Time Distribution by Hotel Type
+
+Lead time is the number of days between the booking date and the arrival date. We compare lead time distributions between hotel types to understand how far in advance guests typically book each hotel type.
+```{r}
+ggplot(hotel_data, aes(x = lead_time, fill = hotel)) +
+  geom_histogram(binwidth = 10, alpha = 0.7, position = "identity") +
+  coord_cartesian(xlim = c(0, 365)) +
+  labs(title = "Lead Time Distribution by Hotel Type",
+       x = "Lead Time (days)",
+       y = "Number of Bookings",
+       fill = "Hotel Type") +
+  theme_minimal()
+```
+Note: The x axis is capped at 365 days for readability. A small number of bookings with lead times beyond one year exist in the data but are excluded from the display.
+
+Both hotel types show a right-skewed distribution with most bookings made close to the arrival date. City hotels show a slightly longer tail, suggesting a higher proportion of far-in-advance bookings compared to resort hotels.
+
+### 3.8 Cancellation Rate by Deposit Type
+
+We examine whether the type of deposit made at booking affects cancellation rates. Intuitively, guests who pay a non-refundable deposit should be less likely to cancel.
+```{r}
+ggplot(hotel_data, aes(x = deposit_type, fill = is_canceled)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  labs(title = "Cancellation Rate by Deposit Type",
+       x = "Deposit Type",
+       y = "Proportion",
+       fill = "Cancelled") +
+  theme_minimal()
+```
+
+Surprisingly, non-refundable deposits show the highest cancellation rate. This is counterintuitive but may reflect that non-refundable bookings are often made far in advance through online travel agents, giving guests more time to change plans even at the cost of losing their deposit.
+
+### 3.9 Lead Time by Cancellation Status
+
+We examine whether cancelled bookings tend to have longer lead times. Guests who book far in advance may be more likely to cancel as their plans change over time.
+```{r}
+ggplot(hotel_data, aes(x = is_canceled, y = lead_time, fill = is_canceled)) +
+  geom_boxplot() +
+  coord_cartesian(ylim = c(0, 365)) +
+  labs(title = "Lead Time by Cancellation Status",
+       x = "Cancelled",
+       y = "Lead Time (days)",
+       fill = "Cancelled") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+Cancelled bookings have a noticeably higher median lead time compared to bookings that were not cancelled. This confirms that guests who book further in advance are more likely to cancel, which is an important insight for hotel revenue management strategies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

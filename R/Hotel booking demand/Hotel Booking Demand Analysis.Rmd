@@ -7,6 +7,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
+
 ## Project Overview
 
 This analysis explores the [Hotel Booking Demand dataset](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand), 
@@ -15,29 +16,27 @@ city hotels and resort hotels. The data includes information on booking patterns
 pricing, and cancellations.
 
 The central business question we are trying to answer is: **What factors influence hotel booking 
-cancellations, pricing, and guest behavior — and what can hotel managers do about it?**
+cancellations, pricing, and guest behavior and what can hotel managers do about it?**
 
 **Dataset:** Jesse Mostipak via Kaggle | 119,390 rows | 32 columns
 
----
-
 ## Analysis Plan
 
-1. **Data Loading and Exploration** — import libraries, load data, inspect structure
-2. **Data Cleaning and Preparation** — handle missing values, fix data types, create new variables
-3. **Exploratory Data Analysis (EDA)** — booking patterns, seasonal trends, hotel type comparisons
-4. **Hypothesis Testing** — inferential statistics to test key business assumptions
-5. **Cancellation Analysis** — what predicts whether a booking gets cancelled
-6. **Key Insights and Recommendations** — summary of findings for hotel management
-
----
+1. **Data Loading and Exploration** - import libraries, load data, inspect structure
+2. **Data Cleaning and Preparation** - handle missing values, fix data types, create new variables
+3. **Exploratory Data Analysis (EDA)** - booking patterns, seasonal trends, hotel type comparisons
+4. **Hypothesis Testing** - inferential statistics to test key business assumptions
+5. **Cancellation Analysis** - what predicts whether a booking gets cancelled
+6. **Key Insights and Recommendations** - summary of findings for hotel management
 
 ## Section 1: Data Loading and Exploration
+
 ### 1.1 Load Libraries
 
 We will use the following packages:
 
-- **tidyverse**: a collection of R packages for data science...
+- **tidyverse**: a collection of R packages for data science, including `ggplot2` for visualization, 
+  `dplyr` for data manipulation, and `readr` for importing data
 - **knitr**: formats tables and output neatly in the HTML document
 ```{r}
 library(tidyverse)
@@ -55,7 +54,8 @@ head(hotel_data)
 ```
 
 The dataset contains **119,390 rows** and **32 columns**, meaning we have 119,390 individual hotel 
-bookings with 32 pieces of information recorded for each one.
+bookings with 32 pieces of information recorded for each one. Note that we will reload the data 
+in Section 2.2 with proper settings after inspecting its structure.
 
 ## Section 2: Data Cleaning and Preparation
 
@@ -89,6 +89,7 @@ not automatically recognize them as missing values. We fix this by reloading the
 hotel_data <- read.csv("Dataset/hotel_bookings.csv", na.strings = c("", "NA", "NULL"))
 colSums(is.na(hotel_data))
 ```
+
 Four columns contain missing values. The `agent` and `company` columns have the most, with 16,340 
 and 112,593 missing values respectively. This makes business sense because not every booking is made 
 through a travel agent or a corporate account. We will handle these in the next step.
@@ -96,7 +97,7 @@ through a travel agent or a corporate account. We will handle these in the next 
 ### 2.3 Handle Missing Values
 
 We handle each column differently based on what the missing value actually means in context.
-For `children`, `agent`, and `company`, a missing value means zero — no children, no agent, 
+For `children`, `agent`, and `company`, a missing value means zero - no children, no agent, 
 and no corporate account. For `country`, we leave the 488 missing values as is since we cannot 
 make a safe assumption about where a guest is from.
 ```{r}
@@ -106,6 +107,7 @@ hotel_data$company[is.na(hotel_data$company)]   <- 0
 
 colSums(is.na(hotel_data))
 ```
+
 After handling missing values, only the 488 missing entries in `country` remain, which we will 
 exclude only if a specific analysis requires country-level filtering.
 
@@ -148,7 +150,7 @@ summary(hotel_data)
 
 The summary reveals a few issues we will address: `adr` has a minimum value of -6.38 which 
 is impossible for a room rate, and some bookings show zero guests across all guest type columns 
-which is logically impossible. We will clean these in section 2.7.
+which is logically impossible. We will clean these in section 2.8.
 
 ### 2.6 Check for Duplicates
 
@@ -158,14 +160,18 @@ skew counts and summaries if left in the data.
 sum(duplicated(hotel_data))
 ```
 
-The output shows 31,994 duplicate rows. We will remove them to ensure our analysis is based 
-on unique booking records.
+The output shows 31,994 rows that are identical across all 32 columns. Since the dataset 
+does not contain a unique booking ID column, we cannot confirm with certainty that these 
+are data entry errors rather than legitimate identical bookings. However, having two bookings 
+that are identical across all 32 variables simultaneously is statistically unlikely, so we 
+assume these are duplicates and remove them.
 ```{r}
 hotel_data <- hotel_data[!duplicated(hotel_data), ]
 dim(hotel_data)
 ```
 
-After removing duplicates, the dataset contains 87,396 rows.
+After removing assumed duplicates, the dataset contains 87,396 rows. This assumption should 
+be noted as a limitation of this analysis.
 
 ### 2.7 Standardize Text Values
 
@@ -175,6 +181,68 @@ consistent values throughout the analysis.
 hotel_data$hotel <- trimws(tolower(hotel_data$hotel))
 unique(hotel_data$hotel)
 ```
+
 The output confirms we have exactly two clean hotel types: `"city hotel"` and `"resort hotel"`.
 
+### 2.8 Remove Suspicious Values
 
+The summary revealed that `adr` has a minimum value of -6.38 which is impossible for a room 
+rate. The summary also shows bookings where `adults`, `children`, and `babies` are all zero, 
+which is logically impossible. We remove both types of suspicious records.
+```{r}
+hotel_data <- hotel_data[hotel_data$adr >= 0, ]
+
+hotel_data <- hotel_data[!(hotel_data$adults == 0 & 
+                            hotel_data$children == 0 & 
+                            hotel_data$babies == 0), ]
+dim(hotel_data)
+```
+
+After removing suspicious values the dataset is clean and ready for analysis.
+
+### 2.9 Create New Variables
+
+We create several new variables that will make our analysis and visualizations cleaner.
+```{r}
+hotel_data$stay_length <- hotel_data$stays_in_weekend_nights + 
+                          hotel_data$stays_in_week_nights
+
+hotel_data$total_guests <- hotel_data$adults + 
+                           hotel_data$children + 
+                           hotel_data$babies
+
+hotel_data$arrival_date <- as.Date(paste(hotel_data$arrival_date_year,
+                                         hotel_data$arrival_date_month,
+                                         hotel_data$arrival_date_day_of_month,
+                                         sep = "-"), format = "%Y-%B-%d")
+
+hotel_data$family <- ifelse(hotel_data$children + hotel_data$babies > 0, 
+                            "Family", "Non-Family")
+
+summary(hotel_data[c("stay_length", "total_guests", "arrival_date", "family")])
+```
+
+These new variables will be used throughout the EDA and hypothesis testing sections 
+to make comparisons cleaner and more meaningful.
+
+## Section 3: Exploratory Data Analysis
+
+In this section we explore the data visually to understand booking patterns, seasonal trends, 
+and differences between hotel types before moving into formal hypothesis testing.
+
+### 3.1 Booking Volume by Hotel Type
+
+We start by comparing the total number of bookings between city hotels and resort hotels 
+to understand the overall split in the dataset.
+```{r}
+ggplot(hotel_data, aes(x = hotel, fill = hotel)) +
+  geom_bar() +
+  labs(title = "Booking Volume by Hotel Type",
+       x = "Hotel Type",
+       y = "Number of Bookings") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+City hotels account for roughly twice the number of bookings compared to resort hotels, 
+suggesting they are the more dominant hotel type in this dataset.

@@ -34,18 +34,108 @@ cancellations, pricing, and guest behavior — and what can hotel managers do ab
 
 ## Section 1: Data Loading and Exploration
 ### 1.1 Load Libraries
+
+We will use the following packages:
+
+- **tidyverse**: a collection of R packages for data science...
+- **knitr**: formats tables and output neatly in the HTML document
+```{r}
 library(tidyverse)
 library(knitr)
+```
 
+### 1.2 Load the Dataset
 
+We load the CSV file into a data frame called `hotel_data`. A data frame is R's version of a table 
+where rows are observations (individual bookings) and columns are variables (features of each booking).
+```{r}
+hotel_data <- read.csv("Dataset/hotel_bookings.csv")
+dim(hotel_data)
+head(hotel_data)
+```
 
+The dataset contains **119,390 rows** and **32 columns**, meaning we have 119,390 individual hotel 
+bookings with 32 pieces of information recorded for each one.
 
+## Section 2: Data Cleaning and Preparation
 
+Before we analyze the data, we need to inspect and clean it. Raw datasets often contain missing values, 
+incorrect data types, and variables that need to be transformed before they are useful for analysis.
 
+### 2.1 Inspect the Data
 
+We start by checking the column names and structure of the dataset. The `colnames()` function shows us 
+all 32 variable names, and `str()` shows us the data type of each column along with a preview of its values.
+```{r}
+colnames(hotel_data)
+str(hotel_data)
+```
 
+The output shows us that some columns are stored as integers when they should be treated as categories. 
+For example, `is_canceled` is coded as 0 and 1 but represents a yes/no outcome, not a number. 
+We will fix these in the next step.
 
+### 2.2 Check for Missing Values
 
+We check how many missing values exist in each column using `colSums(is.na())`.
+This helps us decide how to handle incomplete data before analysis.
+
+However, this dataset stores missing values as the string `"NULL"` instead of leaving cells blank.
+We can confirm this by running `class(hotel_data$agent)` which returns `"character"`, and 
+`head(hotel_data$agent)` which shows the literal text `"NULL"` in those cells. This means R does 
+not automatically recognize them as missing values. We fix this by reloading the data with the 
+`na.strings` argument, which tells R to treat `"NULL"` as `NA`.
+```{r}
+hotel_data <- read.csv("Dataset/hotel_bookings.csv", na.strings = c("", "NA", "NULL"))
+colSums(is.na(hotel_data))
+```
+Four columns contain missing values. The `agent` and `company` columns have the most, with 16,340 
+and 112,593 missing values respectively. This makes business sense because not every booking is made 
+through a travel agent or a corporate account. We will handle these in the next step.
+
+### 2.3 Handle Missing Values
+
+We handle each column differently based on what the missing value actually means in context.
+For `children`, `agent`, and `company`, a missing value means zero — no children, no agent, 
+and no corporate account. For `country`, we leave the 488 missing values as is since we cannot 
+make a safe assumption about where a guest is from.
+```{r}
+hotel_data$children[is.na(hotel_data$children)] <- 0
+hotel_data$agent[is.na(hotel_data$agent)]       <- 0
+hotel_data$company[is.na(hotel_data$company)]   <- 0
+
+colSums(is.na(hotel_data))
+```
+After handling missing values, only the 488 missing entries in `country` remain, which we will 
+exclude only if a specific analysis requires country-level filtering.
+
+### 2.4 Fix Data Types
+
+Some columns are stored as integers when they actually represent categories. We convert them to 
+factors so R treats them correctly in analysis and visualizations. We also fix `arrival_date_month` 
+which is stored as text but sorts alphabetically by default. We force it into the correct calendar 
+order using an ordered factor.
+```{r}
+hotel_data$is_canceled <- factor(hotel_data$is_canceled, 
+                                  levels = c(0, 1), 
+                                  labels = c("No", "Yes"))
+
+hotel_data$is_repeated_guest <- factor(hotel_data$is_repeated_guest, 
+                                        levels = c(0, 1), 
+                                        labels = c("No", "Yes"))
+
+hotel_data$arrival_date_month <- factor(hotel_data$arrival_date_month,
+                                         levels = c("January", "February", "March",
+                                                    "April", "May", "June", "July",
+                                                    "August", "September", "October",
+                                                    "November", "December"),
+                                         ordered = TRUE)
+
+str(hotel_data[c("is_canceled", "is_repeated_guest", "arrival_date_month")])
+```
+
+The `str()` output confirms the three columns are now stored as factors with the correct levels 
+and ordering.
 
 
 

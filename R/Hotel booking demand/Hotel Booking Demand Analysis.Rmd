@@ -387,6 +387,118 @@ ggplot(hotel_data, aes(x = is_canceled, y = lead_time, fill = is_canceled)) +
 
 Cancelled bookings have a noticeably higher median lead time compared to bookings that were not cancelled. This confirms that guests who book further in advance are more likely to cancel, which is an important insight for hotel revenue management strategies.
 
+## Section 4: Hypothesis Testing
+
+In this section we use inferential statistics to test whether the patterns we observed in the EDA are statistically significant or could simply be due to random chance. We will conduct two hypothesis tests based on questions raised by the EDA.
+
+### 4.1 Is There a Significant Difference in Mean Lead Time Between Hotel Types?
+
+From Section 3.7 we observed a difference in lead time distributions between hotel types. 
+We now test whether this difference is statistically significant.
+
+**Null Hypothesis (H0):** The mean lead time for city hotels is equal to the mean lead 
+time for resort hotels.
+
+**Alternative Hypothesis (H1):** The mean lead time for city hotels is not equal to the 
+mean lead time for resort hotels.
+
+We use a two-tailed Welch two-sample t-test because we are not assuming a direction, 
+and we do not assume equal variances between the two groups. We verify the variances 
+are different before proceeding:
+```{r}
+city_hotels   <- hotel_data[hotel_data$hotel == "city hotel", ]
+resort_hotels <- hotel_data[hotel_data$hotel == "resort hotel", ]
+
+var(city_hotels$lead_time)
+var(resort_hotels$lead_time)
+```
+
+The variances are substantially different, confirming that Welch is the appropriate choice over a standard two-sample t-test.
+```{r}
+t.test(city_hotels$lead_time, resort_hotels$lead_time, 
+       var.equal = FALSE, 
+       alternative = "two.sided")
+```
+
+The p-value is far below 0.05, so we reject the null hypothesis. There is strong statistical evidence that lead times differ between hotel types. Interestingly, resort hotels show a slightly higher mean lead time (83.4 days) compared to city hotels (77.8 days), suggesting guests plan resort stays further in advance than city stays.
+
+### 4.2 Is the Average Length of Stay Significantly Different From 3 Nights?
+
+From Section 2.9 we saw that the average stay length is approximately 3.6 nights. We now test whether this is significantly different from 3 nights or whether the difference could be due to random chance.
+
+**Null Hypothesis (H0):** The mean length of stay is equal to 3 nights.
+
+**Alternative Hypothesis (H1):** The mean length of stay is not equal to 3 nights.
+
+We use a one-sample t-test comparing the sample mean against the hypothesized value of 3. This is a two-tailed test because we are asking whether the mean is different in either direction, not specifically higher or lower.
+```{r}
+t.test(hotel_data$stay_length, mu = 3, alternative = "two.sided")
+```
+
+The p-value is far below 0.05, so we reject the null hypothesis. The average length of stay is significantly different from 3 nights. The sample mean of approximately 3.6 nights suggests guests tend to stay slightly longer than 3 nights on average. Hotels should factor this into staffing schedules, housekeeping planning, and extended stay pricing strategies.
+
+### 4.3 Do Cancelled Bookings Have a Higher Mean Lead Time?
+
+From Section 3.9 we observed that cancelled bookings tend to have longer lead times. We now test whether this difference is statistically significant.
+
+**Null Hypothesis (H0):** The mean lead time for cancelled bookings is equal to the mean lead time for non-cancelled bookings.
+
+**Alternative Hypothesis (H1):** The mean lead time for cancelled bookings is greater than the mean lead time for non-cancelled bookings.
+
+We use a one-tailed Welch t-test because we have a clear directional hypothesis based on our EDA observation in Section 3.9.
+```{r}
+cancelled     <- hotel_data[hotel_data$is_canceled == "Yes", ]
+not_cancelled <- hotel_data[hotel_data$is_canceled == "No", ]
+
+t.test(cancelled$lead_time, not_cancelled$lead_time,
+       var.equal = FALSE,
+       alternative = "greater")
+```
+
+The p-value is far below 0.05, so we reject the null hypothesis. Cancelled bookings have a significantly higher mean lead time than non-cancelled bookings. This confirms that guests who book further in advance are more likely to cancel, which is a critical insight for hotel revenue management and overbooking strategies.
+
+### 4.4 Is the Mean ADR Significantly Different Between Hotel Types?
+
+From Section 3.4 we observed that city hotels appear to have a slightly higher and more consistent ADR compared to resort hotels. We now test whether this difference is statistically significant.
+
+**Null Hypothesis (H0):** The mean ADR for city hotels is equal to the mean ADR for resort hotels.
+
+**Alternative Hypothesis (H1):** The mean ADR for city hotels is not equal to the mean ADR for resort hotels.
+
+We use a two-tailed Welch t-test because we are not assuming a direction, and the boxplot in Section 3.4 showed clearly different spreads between the two groups, confirming unequal variances.
+```{r}
+t.test(city_hotels$adr, resort_hotels$adr,
+       var.equal = FALSE,
+       alternative = "two.sided")
+```
+
+The p-value is far below 0.05, so we reject the null hypothesis. There is strong statistical evidence that mean ADR differs significantly between hotel types. City hotels have a higher mean ADR, suggesting they command premium pricing likely driven by their urban location and business traveler demand.
+
+### 4.5 Do Family Bookings Have a Longer Mean Stay Than Non-Family Bookings?
+
+From our `family` variable created in Section 2.9 we can test whether families tend to stay longer than non-family guests. This is an intuitive business question since families typically travel for leisure and may stay longer than business travelers.
+
+**Null Hypothesis (H0):** The mean length of stay for family bookings is equal to the mean length of stay for non-family bookings.
+
+**Alternative Hypothesis (H1):** The mean length of stay for family bookings is greater than the mean length of stay for non-family bookings.
+
+We use a one-tailed Welch t-test because we have a clear directional hypothesis — families are expected to stay longer, not just differently.
+```{r}
+family_bookings     <- hotel_data[hotel_data$family == "Family", ]
+non_family_bookings <- hotel_data[hotel_data$family == "Non-Family", ]
+
+t.test(family_bookings$stay_length, non_family_bookings$stay_length,
+       var.equal = FALSE,
+       alternative = "greater")
+```
+
+The p-value is far below 0.05, so we reject the null hypothesis. Family bookings have a significantly longer mean stay than non-family bookings. Hotels should consider targeted packages for families such as extended stay discounts or family room bundles to capitalize on this pattern.
+
+
+
+
+
+
 
 
 

@@ -1,16 +1,16 @@
 # Power BI Projects
 
-This folder contains three Power BI dashboard projects, each built around a real business question using a publicly available dataset. They are designed to be completed in order — each one introduces new concepts that build on the previous.
+This folder contains three Power BI dashboard projects, each built around a real business question using a publicly available dataset. They are designed to be completed in order. Each one introduces new concepts that build on the previous.
 
 ---
 
 ## Recommended Order
 
-### 1. HR Workforce Analytics — Start Here
+### 1. HR Workforce Analytics (Start Here)
 **Difficulty:** Beginner
 **Business Question:** What drives employee attrition, and where should HR intervene?
 
-A great first project. The dataset is small and clean (1,470 rows), the business question is clear, and the focus is on learning the fundamentals — Power Query cleaning, DAX measures, and building a multi-page report with slicers and KPI cards.
+A great first project. The dataset is small and clean (1,470 rows), the business question is clear, and the focus is on learning the fundamentals: Power Query cleaning, DAX measures, and building a multi-page report with slicers and KPI cards.
 
 **What you will learn:**
 - Loading and cleaning data in Power Query
@@ -22,11 +22,11 @@ A great first project. The dataset is small and clean (1,470 rows), the business
 
 ---
 
-### 2. USA Real Estate Dashboard — Build on the Basics
+### 2. USA Real Estate Dashboard (Intermediate)
 **Difficulty:** Intermediate
 **Business Question:** What does the US real estate market look like, and which states and cities represent the most valuable and active markets?
 
-A step up in scale and complexity. The dataset has 2.2M rows with real data quality issues — nulls, outliers, and bad values — that require careful cleaning decisions. You will also build more advanced visuals including a filled map, a scatter chart quadrant analysis, and a composite scoring measure.
+A step up in scale and complexity. The dataset has 2.2M rows with real data quality issues including nulls, outliers, and bad values that require careful cleaning decisions. You will also build more advanced visuals including a filled map, a scatter chart quadrant analysis, and a composite scoring measure.
 
 **What you will learn:**
 - Cleaning a large dataset with nulls and outliers
@@ -39,7 +39,7 @@ A step up in scale and complexity. The dataset has 2.2M rows with real data qual
 
 ---
 
-### 3. Customer Churn Revenue Risk — Advanced Techniques
+### 3. Customer Churn Revenue Risk (Advanced)
 **Difficulty:** Advanced
 **Business Question:** What drives customer churn, and how can we reduce its revenue impact?
 

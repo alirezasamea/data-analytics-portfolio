@@ -137,6 +137,44 @@ str(hotel_data[c("is_canceled", "is_repeated_guest", "arrival_date_month")])
 The `str()` output confirms the three columns are now stored as factors with the correct levels 
 and ordering.
 
+### 2.5 Summary Statistics
 
+Before checking for specific issues, we run a statistical summary of the entire dataset. 
+This gives us a quick overview of min, max, mean, and quartiles for every column, and is 
+often the fastest way to spot suspicious values.
+```{r}
+summary(hotel_data)
+```
+
+The summary reveals a few issues we will address: `adr` has a minimum value of -6.38 which 
+is impossible for a room rate, and some bookings show zero guests across all guest type columns 
+which is logically impossible. We will clean these in section 2.7.
+
+### 2.6 Check for Duplicates
+
+We check for duplicate rows to ensure each booking record is unique. Duplicate rows can 
+skew counts and summaries if left in the data.
+```{r}
+sum(duplicated(hotel_data))
+```
+
+The output shows 31,994 duplicate rows. We will remove them to ensure our analysis is based 
+on unique booking records.
+```{r}
+hotel_data <- hotel_data[!duplicated(hotel_data), ]
+dim(hotel_data)
+```
+
+After removing duplicates, the dataset contains 87,396 rows.
+
+### 2.7 Standardize Text Values
+
+We convert the `hotel` column to lowercase and trim any extra spaces to ensure 
+consistent values throughout the analysis.
+```{r}
+hotel_data$hotel <- trimws(tolower(hotel_data$hotel))
+unique(hotel_data$hotel)
+```
+The output confirms we have exactly two clean hotel types: `"city hotel"` and `"resort hotel"`.
 
 

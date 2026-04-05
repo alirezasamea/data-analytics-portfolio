@@ -1,0 +1,31 @@
+---
+title: "Hotel Booking Demand Analysis"
+author: "Alireza Samea"
+date: "2026-04-04"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+## Project Overview
+
+This analysis explores the [Hotel Booking Demand dataset](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand), 
+a publicly available dataset on Kaggle containing 119,390 hotel booking records across two hotel types: 
+city hotels and resort hotels. The data includes information on booking patterns, guest demographics, 
+pricing, and cancellations.
+
+The central business question we are trying to answer is: **What factors influence hotel booking 
+cancellations, pricing, and guest behavior — and what can hotel managers do about it?**
+
+**Dataset:** Jesse Mostipak via Kaggle | 119,390 rows | 32 columns
+
+---
+
+## Analysis Plan
+
+1. **Data Loading and Exploration** — import libraries, load data, inspect structure
+2. **Data Cleaning and Preparation** — handle missing values, fix data types, create new variables
+3. **Exploratory Data Analysis (EDA)** — booking patterns, seasonal trends, hotel type comparisons
+4. **Hypothesis Testing** — inferential statistics to test key business assumptions
+5. **Cancellation Analysis** — what predicts whether a booking gets cancelled
+6. **Key Insights and Recommendations** — summary of findings for hotel management

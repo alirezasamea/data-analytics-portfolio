@@ -2,7 +2,7 @@
 title: "Hotel Booking Demand Analysis"
 author: "Alireza Samea"
 date: "2026-04-04"
-output: github_document
+output: html_document
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)

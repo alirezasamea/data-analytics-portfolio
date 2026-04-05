@@ -565,4 +565,49 @@ The odds ratios tell us the following:
 - **customer_typeGroup**: Odds ratio of 0.680, meaning group bookings are actually less likely to cancel than contract customers.
 - **customer_typeTransient-Party**: Not statistically significant (p = 0.43), meaning we cannot conclude this customer type differs meaningfully from contract customers.
 
+## Section 6: Key Insights and Recommendations
 
+In this section we summarize the most important findings from our analysis and translate them into concrete recommendations for hotel managers.
+
+### 6.1 Key Findings
+
+| Finding | Detail |
+|---------|--------|
+| Overall cancellation rate | 27.5% of all bookings were cancelled |
+| Strongest cancellation predictor | Non-refundable deposit bookings are 40x more likely to cancel |
+| Lead time effect | Longer lead times significantly increase cancellation risk |
+| Hotel type difference | Resort hotels have 33% lower cancellation odds than city hotels |
+| Customer type risk | Transient customers are nearly 3x more likely to cancel than contract customers |
+| Seasonal pricing | ADR peaks in July and August, drops in January and February |
+| Lead time difference | Resort hotels have slightly longer mean lead times than city hotels |
+| Family stays | Family bookings have significantly longer stays than non-family bookings |
+
+### 6.2 Recommendations for Hotel Managers
+
+**1. Rethink the Non-Refundable Deposit Strategy**
+
+Non-refundable bookings have the highest cancellation rate in the dataset. While the hotel retains the payment on these cancellations, the room remains empty and ancillary revenue from food, beverage, and services is lost. Additionally, high cancellation rates on online travel agent platforms can negatively impact a hotel's search ranking and visibility. Hotels should investigate whether non-refundable policies are attracting speculative bookings and consider adjusting their distribution channel strategy accordingly.
+
+**2. Flag High Risk Bookings Early**
+
+Bookings with long lead times and transient customer types have the highest cancellation risk according to our model. Hotels should implement an early warning system to identify these bookings and follow up with guests closer to the arrival date.
+
+**3. Targeted Pricing for Peak Season**
+
+ADR peaks in July and August. Hotels should implement dynamic pricing strategies that capitalize on summer demand while offering incentives for shoulder season bookings in January and February to smooth out demand.
+
+**4. Family Packages for Resort Hotels**
+
+Family bookings stay significantly longer than non-family bookings. Resort hotels in particular should develop targeted family packages such as extended stay discounts and family room bundles to attract and retain this valuable segment.
+
+**5. Focus Retention Efforts on City Hotels**
+
+City hotels have higher cancellation rates and higher ADR than resort hotels. Reducing cancellations in city hotels would have a disproportionate impact on revenue. Loyalty programs and flexible rebooking policies could help retain these guests.
+
+---
+
+### 6.3 Limitations
+
+- Duplicate rows were removed based on the assumption that identical records across all 32 columns represent data entry errors. This assumption cannot be fully verified.
+- The dataset covers July 2015 to August 2017 only and may not reflect current booking behavior post-pandemic.
+- The logistic regression model explains approximately 7.7% of cancellation variance, suggesting there are important predictors not captured in this dataset such as pricing changes, external events, and guest reviews.

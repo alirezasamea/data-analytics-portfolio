@@ -190,8 +190,6 @@ Each metric is normalized to 0-1 against the maximum value across all states, th
 2. Create a free Kaggle account if you do not have one
 3. Download and extract the CSV file
 
-> **Note:** The file is over 100MB. Do not commit it to GitHub -- add it to your `.gitignore` file.
-
 ---
 
 ### Step 2 - Load and Clean Data in Power Query

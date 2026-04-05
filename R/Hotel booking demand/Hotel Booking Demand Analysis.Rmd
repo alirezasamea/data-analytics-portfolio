@@ -494,24 +494,75 @@ t.test(family_bookings$stay_length, non_family_bookings$stay_length,
 
 The p-value is far below 0.05, so we reject the null hypothesis. Family bookings have a significantly longer mean stay than non-family bookings. Hotels should consider targeted packages for families such as extended stay discounts or family room bundles to capitalize on this pattern.
 
+## Section 5: Cancellation Analysis
 
+In this section we go beyond visualization to quantify cancellation patterns and identify which factors are the strongest predictors of whether a booking will be cancelled. We use logistic regression because our outcome variable `is_canceled` is binary — either Yes or No.
 
+### 5.1 Overall Cancellation Rate
 
+We start by establishing the baseline cancellation rate across the entire dataset.
+```{r}
+cancellation_rate <- prop.table(table(hotel_data$is_canceled))
+round(cancellation_rate * 100, 2)
+```
 
+Approximately 27.5% of all bookings in the cleaned dataset were cancelled. This is notably high and confirms that cancellation is a significant business problem worth investigating further.
 
+### 5.2 Cancellation Rate by Key Variables
 
+We calculate exact cancellation rates by deposit type, hotel type, and customer type to identify which segments have the highest cancellation risk.
+```{r}
+# Cancellation rate by deposit type
+round(prop.table(table(hotel_data$deposit_type, hotel_data$is_canceled), margin = 1) * 100, 2)
 
+# Cancellation rate by hotel type
+round(prop.table(table(hotel_data$hotel, hotel_data$is_canceled), margin = 1) * 100, 2)
 
+# Cancellation rate by customer type
+round(prop.table(table(hotel_data$customer_type, hotel_data$is_canceled), margin = 1) * 100, 2)
+```
 
+The tables confirm the pattern we saw in Section 3.8 — non-refundable deposit bookings have a surprisingly high cancellation rate. City hotels cancel at a higher rate than resort hotels, and transient customers show the highest cancellation rate among customer types.
 
+### 5.3 Logistic Regression Model
 
+We build a logistic regression model to identify which variables are the strongest 
+predictors of cancellation. Logistic regression is appropriate here because our outcome 
+variable is binary — cancelled or not cancelled.
+```{r}
+model <- glm(is_canceled ~ lead_time + deposit_type + hotel + 
+               total_guests + stays_in_week_nights + customer_type,
+             data = hotel_data,
+             family = binomial)
 
+summary(model)
 
+```
 
+```{r}
+mcfadden_r2 <- 1 - (model$deviance / model$null.deviance)
+round(mcfadden_r2, 3)
+```
 
+McFadden's pseudo R² of 0.077 indicates the model explains approximately 7.7% of the variance in cancellation outcomes. While this appears low, values between 0.02 and 0.40 are considered acceptable in logistic regression, particularly when predicting complex human behavior such as booking cancellations.
 
+### 5.4 Model Interpretation
 
+We convert the log odds coefficients to odds ratios using `exp()` to make them easier to interpret. An odds ratio above 1 means the variable increases cancellation risk, while an odds ratio below 1 means it decreases cancellation risk.
+```{r}
+round(exp(coef(model)), 3)
+```
 
+The odds ratios tell us the following:
 
+- **lead_time**: Odds ratio of 1.005, meaning for every additional day of lead time the odds of cancellation increase by 0.5%. This compounds significantly over hundreds of days, confirming our finding in Section 4.3.
+- **deposit_typeNon Refund**: Odds ratio of 40.07 — by far the strongest predictor. Bookings with non-refundable deposits are 40 times more likely to be cancelled than no-deposit bookings. This is counterintuitive but likely reflects speculative bookings made far in advance through online travel agents.
+- **deposit_typeRefundable**: Odds ratio of 1.658, a moderate increase in cancellation risk compared to no-deposit bookings.
+- **hotelresort hotel**: Odds ratio of 0.669, meaning resort hotel bookings are 33% less likely to be cancelled than city hotel bookings.
+- **total_guests**: Odds ratio of 1.236, meaning larger bookings have slightly higher cancellation risk.
+- **stays_in_week_nights**: Odds ratio of 1.065, meaning longer stays are slightly more likely to be cancelled.
+- **customer_typeTransient**: Odds ratio of 2.826, meaning transient customers are nearly 3 times more likely to cancel than contract customers.
+- **customer_typeGroup**: Odds ratio of 0.680, meaning group bookings are actually less likely to cancel than contract customers.
+- **customer_typeTransient-Party**: Not statistically significant (p = 0.43), meaning we cannot conclude this customer type differs meaningfully from contract customers.
 
 

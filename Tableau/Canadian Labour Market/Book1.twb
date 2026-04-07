@@ -1,0 +1,2862 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0226.1626                               -->
+<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.DashboardRoundedCorners.true...DashboardRoundedCorners />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='provincial_labour_force' inline='true' name='federated.1j4wvc109m6lco12j7in21xmjipm' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='provincial_labour_force' name='textscan.1czzhef1d2apv819bqcmf1hojyx3'>
+            <connection class='textscan' directory='C:/Users/hedye/Desktop/Drive D/Courses I took/GitHub/data-analytics-portfolio/Tableau/Canadian Labour Market/Dataset' filename='provincial_labour_force.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1czzhef1d2apv819bqcmf1hojyx3' name='provincial_labour_force.csv' table='[provincial_labour_force#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+            <column datatype='date' date-parse-format='yyyy-MM' name='REF_DATE' ordinal='0' />
+            <column datatype='string' name='GEO' ordinal='1' />
+            <column datatype='string' name='DGUID' ordinal='2' />
+            <column datatype='string' name='Labour force characteristics' ordinal='3' />
+            <column datatype='string' name='Gender' ordinal='4' />
+            <column datatype='string' name='Age group' ordinal='5' />
+            <column datatype='string' name='Statistics' ordinal='6' />
+            <column datatype='string' name='Data type' ordinal='7' />
+            <column datatype='string' name='UOM' ordinal='8' />
+            <column datatype='integer' name='UOM_ID' ordinal='9' />
+            <column datatype='string' name='SCALAR_FACTOR' ordinal='10' />
+            <column datatype='integer' name='SCALAR_ID' ordinal='11' />
+            <column datatype='string' name='VECTOR' ordinal='12' />
+            <column datatype='string' name='COORDINATE' ordinal='13' />
+            <column datatype='real' name='VALUE' ordinal='14' />
+            <column datatype='string' name='STATUS' ordinal='15' />
+            <column datatype='string' name='SYMBOL' ordinal='16' />
+            <column datatype='string' name='TERMINATED' ordinal='17' />
+            <column datatype='integer' name='DECIMALS' ordinal='18' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_CA&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>REF_DATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[REF_DATE]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>REF_DATE</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GEO</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[GEO]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>GEO</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DGUID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DGUID]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>DGUID</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Labour force characteristics</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Labour force characteristics]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>Labour force characteristics</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Gender]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>Gender</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Age group]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>Age group</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Statistics</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Statistics]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>Statistics</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Data type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Data type]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>Data type</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UOM</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[UOM]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>UOM</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UOM_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[UOM_ID]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>UOM_ID</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SCALAR_FACTOR</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SCALAR_FACTOR]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>SCALAR_FACTOR</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SCALAR_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SCALAR_ID]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>SCALAR_ID</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VECTOR</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[VECTOR]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>VECTOR</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>COORDINATE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[COORDINATE]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>COORDINATE</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VALUE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[VALUE]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>VALUE</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STATUS</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[STATUS]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>STATUS</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SYMBOL</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SYMBOL]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>SYMBOL</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TERMINATED</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TERMINATED]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>TERMINATED</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DECIMALS</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DECIMALS]</local-name>
+            <parent-name>[provincial_labour_force.csv]</parent-name>
+            <remote-alias>DECIMALS</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Coordinate' datatype='string' name='[COORDINATE]' role='dimension' type='nominal' />
+      <column caption='Employment (Actual)' datatype='real' name='[Calculation_1678736417103872]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([VALUE]) * 1000' />
+      </column>
+      <column caption='Decimals' datatype='integer' name='[DECIMALS]' role='measure' type='quantitative' />
+      <column caption='Dguid' datatype='string' name='[DGUID]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Labour force characteristics]' role='dimension' type='nominal' />
+      <column caption='Ref Date' datatype='date' name='[REF_DATE]' role='dimension' type='ordinal' />
+      <column caption='Scalar Factor' datatype='string' name='[SCALAR_FACTOR]' role='dimension' type='nominal' />
+      <column caption='Scalar Id' datatype='integer' name='[SCALAR_ID]' role='dimension' type='ordinal' />
+      <column caption='Status' datatype='string' name='[STATUS]' role='dimension' type='nominal' />
+      <column caption='Symbol' datatype='string' name='[SYMBOL]' role='dimension' type='nominal' />
+      <column caption='Terminated' datatype='string' name='[TERMINATED]' role='dimension' type='nominal' />
+      <column caption='Uom Id' datatype='integer' name='[UOM_ID]' role='dimension' type='ordinal' />
+      <column caption='Value' datatype='real' name='[VALUE]' role='measure' type='quantitative' />
+      <column caption='Vector' datatype='string' name='[VECTOR]' role='dimension' type='nominal' />
+      <column caption='provincial_labour_force.csv' datatype='table' name='[__tableau_internal_object_id__].[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]' role='measure' type='quantitative' />
+      <column-instance column='[Labour force characteristics]' derivation='None' name='[none:Labour force characteristics:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/hedye/AppData/Local/Temp/TableauTemp/#TableauTemp_1i9d8jp1dk8ubw1h0c53v0yhbfil.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/07/2026 04:10:57 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>REF_DATE</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[REF_DATE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>REF_DATE</remote-alias>
+              <ordinal>0</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>485</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GEO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[GEO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>GEO</remote-alias>
+              <ordinal>1</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DGUID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DGUID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DGUID</remote-alias>
+              <ordinal>2</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Labour force characteristics</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Labour force characteristics]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Labour force characteristics</remote-alias>
+              <ordinal>3</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Gender</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Gender]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Gender</remote-alias>
+              <ordinal>4</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Age group</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Age group]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Age group</remote-alias>
+              <ordinal>5</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Statistics</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Statistics]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Statistics</remote-alias>
+              <ordinal>6</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Data type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Data type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Data type</remote-alias>
+              <ordinal>7</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>UOM</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[UOM]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>UOM</remote-alias>
+              <ordinal>8</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>UOM_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[UOM_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>UOM_ID</remote-alias>
+              <ordinal>9</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SCALAR_FACTOR</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SCALAR_FACTOR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SCALAR_FACTOR</remote-alias>
+              <ordinal>10</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SCALAR_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[SCALAR_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SCALAR_ID</remote-alias>
+              <ordinal>11</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>VECTOR</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[VECTOR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>VECTOR</remote-alias>
+              <ordinal>12</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>99</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>COORDINATE</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[COORDINATE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>COORDINATE</remote-alias>
+              <ordinal>13</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>99</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>VALUE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[VALUE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>VALUE</remote-alias>
+              <ordinal>14</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5088</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>STATUS</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[STATUS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>STATUS</remote-alias>
+              <ordinal>15</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SYMBOL</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SYMBOL]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SYMBOL</remote-alias>
+              <ordinal>16</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TERMINATED</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TERMINATED]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TERMINATED</remote-alias>
+              <ordinal>17</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DECIMALS</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[DECIMALS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DECIMALS</remote-alias>
+              <ordinal>18</ordinal>
+              <family>provincial_labour_force.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Labour force characteristics:nk]' type='palette'>
+            <map to='#2e86c1'>
+              <bucket>&quot;Full-time employment&quot;</bucket>
+            </map>
+            <map to='#cc0000'>
+              <bucket>&quot;Participation rate&quot;</bucket>
+            </map>
+            <map to='#f39c12'>
+              <bucket>&quot;Part-time employment&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Canada&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='provincial_labour_force.csv' id='provincial_labour_force.csv_BD79372E82D546A1934C6292E84404C7'>
+            <properties context=''>
+              <relation connection='textscan.1czzhef1d2apv819bqcmf1hojyx3' name='provincial_labour_force.csv' table='[provincial_labour_force#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+                  <column datatype='date' date-parse-format='yyyy-MM' name='REF_DATE' ordinal='0' />
+                  <column datatype='string' name='GEO' ordinal='1' />
+                  <column datatype='string' name='DGUID' ordinal='2' />
+                  <column datatype='string' name='Labour force characteristics' ordinal='3' />
+                  <column datatype='string' name='Gender' ordinal='4' />
+                  <column datatype='string' name='Age group' ordinal='5' />
+                  <column datatype='string' name='Statistics' ordinal='6' />
+                  <column datatype='string' name='Data type' ordinal='7' />
+                  <column datatype='string' name='UOM' ordinal='8' />
+                  <column datatype='integer' name='UOM_ID' ordinal='9' />
+                  <column datatype='string' name='SCALAR_FACTOR' ordinal='10' />
+                  <column datatype='integer' name='SCALAR_ID' ordinal='11' />
+                  <column datatype='string' name='VECTOR' ordinal='12' />
+                  <column datatype='string' name='COORDINATE' ordinal='13' />
+                  <column datatype='real' name='VALUE' ordinal='14' />
+                  <column datatype='string' name='STATUS' ordinal='15' />
+                  <column datatype='string' name='SYMBOL' ordinal='16' />
+                  <column datatype='string' name='TERMINATED' ordinal='17' />
+                  <column datatype='integer' name='DECIMALS' ordinal='18' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Employment Trend'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='12'>Full-time vs Part-time Employment</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='provincial_labour_force' name='federated.1j4wvc109m6lco12j7in21xmjipm' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1j4wvc109m6lco12j7in21xmjipm'>
+            <column datatype='string' name='[Data type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[GEO]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Labour force characteristics]' role='dimension' type='nominal' />
+            <column caption='Ref Date' datatype='date' name='[REF_DATE]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Statistics]' role='dimension' type='nominal' />
+            <column caption='Value' datatype='real' name='[VALUE]' role='measure' type='quantitative' />
+            <column-instance column='[VALUE]' derivation='Avg' name='[avg:VALUE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Data type]' derivation='None' name='[none:Data type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[GEO]' derivation='None' name='[none:GEO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Labour force characteristics]' derivation='None' name='[none:Labour force characteristics:nk]' pivot='key' type='nominal' />
+            <column-instance column='[REF_DATE]' derivation='None' name='[none:REF_DATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Statistics]' derivation='None' name='[none:Statistics:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]' context='true'>
+            <groupfilter function='member' level='[none:Data type:nk]' member='&quot;Seasonally adjusted&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]' context='true'>
+            <groupfilter function='member' level='[none:GEO:nk]' member='&quot;Canada&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Labour force characteristics:nk]' member='&quot;Full-time employment&quot;' />
+              <groupfilter function='member' level='[none:Labour force characteristics:nk]' member='&quot;Part-time employment&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]' context='true'>
+            <groupfilter function='member' level='[none:Statistics:nk]' member='&quot;Estimate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' scope='rows' value='Employed Persons (thousands)' />
+            <format attr='title' class='0' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' scope='cols' value='' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='background-color' id='refline0' value='#ffffff00' />
+            <format attr='text-orientation' id='refline0' value='-90' />
+            <format attr='text-align' id='refline0' value='right' />
+            <format attr='vertical-align' id='refline0' value='bottom' />
+            <format attr='background-color' id='refline2' value='#ffffff00' />
+            <format attr='text-orientation' id='refline2' value='-90' />
+            <format attr='background-color' id='refline5' value='#ffffff00' />
+            <format attr='text-orientation' id='refline5' value='-90' />
+            <format attr='background-color' id='refline10' value='#ffffff00' />
+            <format attr='text-orientation' id='refline10' value='-90' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='fill-color' id='refline0' value='#e8daef' />
+            <format attr='fill-color' id='refline2' value='#fadbd8' />
+            <format attr='fill-color' id='refline5' value='#fdebd0' />
+            <format attr='fill-color' id='refline10' value='#d6eaf8' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <color column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline0' label='Dot-com Recession' label-type='custom' paired-id='refline1' scope='per-pane' symmetric='false' value='#2001-03-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='1' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline1' label-type='none' paired-id='refline0' scope='per-pane' symmetric='false' value='#2002-12-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='2' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline10' label='Rate Hike Cycle' label-type='custom' paired-id='refline8' scope='per-pane' symmetric='false' value='#2022-03-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='8' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline2' label='Global Financial Crisis' label-type='custom' paired-id='refline4' scope='per-pane' symmetric='false' value='#2008-09-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='3' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline4' label-type='none' paired-id='refline2' scope='per-pane' symmetric='false' value='#2009-10-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='4' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline5' label='COVID-19' label-type='custom' paired-id='refline7' scope='per-pane' symmetric='false' value='#2020-03-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='5' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline7' label-type='none' paired-id='refline5' scope='per-pane' symmetric='false' value='#2021-09-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='6' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline8' label-type='none' paired-id='refline10' scope='per-pane' symmetric='false' value='#2023-07-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='7' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#cc0000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]</rows>
+        <cols>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</cols>
+      </table>
+      <simple-id uuid='{31F564E6-F7C6-4D7B-B6EB-1533A28A7C1D}' />
+    </worksheet>
+    <worksheet name='KPI - Employment Rate'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='12'>Employment Rate</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='12'>February 2026</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='provincial_labour_force' name='federated.1j4wvc109m6lco12j7in21xmjipm' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1j4wvc109m6lco12j7in21xmjipm'>
+            <column datatype='string' name='[Data type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[GEO]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Labour force characteristics]' role='dimension' type='nominal' />
+            <column caption='Ref Date' datatype='date' name='[REF_DATE]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Statistics]' role='dimension' type='nominal' />
+            <column caption='Value' datatype='real' name='[VALUE]' role='measure' type='quantitative' />
+            <column-instance column='[VALUE]' derivation='Avg' name='[avg:VALUE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Data type]' derivation='None' name='[none:Data type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[GEO]' derivation='None' name='[none:GEO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Labour force characteristics]' derivation='None' name='[none:Labour force characteristics:nk]' pivot='key' type='nominal' />
+            <column-instance column='[REF_DATE]' derivation='None' name='[none:REF_DATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Statistics]' derivation='None' name='[none:Statistics:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]' context='true'>
+            <groupfilter function='member' level='[none:Data type:nk]' member='&quot;Seasonally adjusted&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]' context='true'>
+            <groupfilter function='member' level='[none:GEO:nk]' member='&quot;Canada&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]'>
+            <groupfilter function='member' level='[none:Labour force characteristics:nk]' member='&quot;Employment rate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' included-values='in-range'>
+            <min>#2026-02-01#</min>
+            <max>#2026-02-01#</max>
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]' context='true'>
+            <groupfilter function='member' level='[none:Statistics:nk]' member='&quot;Estimate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' value='*0.0&quot;%&quot;&quot;' />
+            <format attr='text-align' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' value='center' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='background-color' id='refline0' value='#ffffff00' />
+            <format attr='text-orientation' id='refline0' value='-90' />
+            <format attr='text-align' id='refline0' value='right' />
+            <format attr='vertical-align' id='refline0' value='bottom' />
+            <format attr='background-color' id='refline2' value='#ffffff00' />
+            <format attr='text-orientation' id='refline2' value='-90' />
+            <format attr='background-color' id='refline5' value='#ffffff00' />
+            <format attr='text-orientation' id='refline5' value='-90' />
+            <format attr='background-color' id='refline10' value='#ffffff00' />
+            <format attr='text-orientation' id='refline10' value='-90' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='fill-color' id='refline0' value='#e8daef' />
+            <format attr='fill-color' id='refline2' value='#fadbd8' />
+            <format attr='fill-color' id='refline5' value='#fdebd0' />
+            <format attr='fill-color' id='refline10' value='#d6eaf8' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='12'>&lt;</run>
+                <run fontsize='12'>[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]</run>
+                <run fontsize='12'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#cc0000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{763141F8-BCE0-4001-AAE1-A85E8B1A87BA}' />
+    </worksheet>
+    <worksheet name='KPI - Participation Rate'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='12'>Participation Rate</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='12'>February 2026</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='provincial_labour_force' name='federated.1j4wvc109m6lco12j7in21xmjipm' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1j4wvc109m6lco12j7in21xmjipm'>
+            <column datatype='string' name='[Data type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[GEO]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Labour force characteristics]' role='dimension' type='nominal' />
+            <column caption='Ref Date' datatype='date' name='[REF_DATE]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Statistics]' role='dimension' type='nominal' />
+            <column caption='Value' datatype='real' name='[VALUE]' role='measure' type='quantitative' />
+            <column-instance column='[VALUE]' derivation='Avg' name='[avg:VALUE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Data type]' derivation='None' name='[none:Data type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[GEO]' derivation='None' name='[none:GEO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Labour force characteristics]' derivation='None' name='[none:Labour force characteristics:nk]' pivot='key' type='nominal' />
+            <column-instance column='[REF_DATE]' derivation='None' name='[none:REF_DATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Statistics]' derivation='None' name='[none:Statistics:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]' context='true'>
+            <groupfilter function='member' level='[none:Data type:nk]' member='&quot;Seasonally adjusted&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]' context='true'>
+            <groupfilter function='member' level='[none:GEO:nk]' member='&quot;Canada&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]'>
+            <groupfilter function='member' level='[none:Labour force characteristics:nk]' member='&quot;Participation rate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' included-values='in-range'>
+            <min>#2026-02-01#</min>
+            <max>#2026-02-01#</max>
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]' context='true'>
+            <groupfilter function='member' level='[none:Statistics:nk]' member='&quot;Estimate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' value='*0.0&quot;%&quot;&quot;' />
+            <format attr='text-align' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' value='center' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='background-color' id='refline0' value='#ffffff00' />
+            <format attr='text-orientation' id='refline0' value='-90' />
+            <format attr='text-align' id='refline0' value='right' />
+            <format attr='vertical-align' id='refline0' value='bottom' />
+            <format attr='background-color' id='refline2' value='#ffffff00' />
+            <format attr='text-orientation' id='refline2' value='-90' />
+            <format attr='background-color' id='refline5' value='#ffffff00' />
+            <format attr='text-orientation' id='refline5' value='-90' />
+            <format attr='background-color' id='refline10' value='#ffffff00' />
+            <format attr='text-orientation' id='refline10' value='-90' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='fill-color' id='refline0' value='#e8daef' />
+            <format attr='fill-color' id='refline2' value='#fadbd8' />
+            <format attr='fill-color' id='refline5' value='#fdebd0' />
+            <format attr='fill-color' id='refline10' value='#d6eaf8' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='12'>&lt;</run>
+                <run fontsize='12'>[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]</run>
+                <run fontsize='12'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#cc0000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A8BA8092-191D-4E97-9C35-15CAA029FCAC}' />
+    </worksheet>
+    <worksheet name='KPI - Total Employment'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='12'>Total Employment</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='12'>February 2026</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='provincial_labour_force' name='federated.1j4wvc109m6lco12j7in21xmjipm' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1j4wvc109m6lco12j7in21xmjipm'>
+            <column caption='Employment (Actual)' datatype='real' name='[Calculation_1678736417103872]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([VALUE]) * 1000' />
+            </column>
+            <column datatype='string' name='[Data type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[GEO]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Labour force characteristics]' role='dimension' type='nominal' />
+            <column caption='Ref Date' datatype='date' name='[REF_DATE]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Statistics]' role='dimension' type='nominal' />
+            <column caption='Value' datatype='real' name='[VALUE]' role='measure' type='quantitative' />
+            <column-instance column='[Data type]' derivation='None' name='[none:Data type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[GEO]' derivation='None' name='[none:GEO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Labour force characteristics]' derivation='None' name='[none:Labour force characteristics:nk]' pivot='key' type='nominal' />
+            <column-instance column='[REF_DATE]' derivation='None' name='[none:REF_DATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Statistics]' derivation='None' name='[none:Statistics:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1678736417103872]' derivation='User' name='[usr:Calculation_1678736417103872:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]' context='true'>
+            <groupfilter function='member' level='[none:Data type:nk]' member='&quot;Seasonally adjusted&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]' context='true'>
+            <groupfilter function='member' level='[none:GEO:nk]' member='&quot;Canada&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]'>
+            <groupfilter function='member' level='[none:Labour force characteristics:nk]' member='&quot;Employment&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' included-values='in-range'>
+            <min>#2026-02-01#</min>
+            <max>#2026-02-01#</max>
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]' context='true'>
+            <groupfilter function='member' level='[none:Statistics:nk]' member='&quot;Estimate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[usr:Calculation_1678736417103872:qk]' value='center' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='background-color' id='refline0' value='#ffffff00' />
+            <format attr='text-orientation' id='refline0' value='-90' />
+            <format attr='text-align' id='refline0' value='right' />
+            <format attr='vertical-align' id='refline0' value='bottom' />
+            <format attr='background-color' id='refline2' value='#ffffff00' />
+            <format attr='text-orientation' id='refline2' value='-90' />
+            <format attr='background-color' id='refline5' value='#ffffff00' />
+            <format attr='text-orientation' id='refline5' value='-90' />
+            <format attr='background-color' id='refline10' value='#ffffff00' />
+            <format attr='text-orientation' id='refline10' value='-90' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='fill-color' id='refline0' value='#e8daef' />
+            <format attr='fill-color' id='refline2' value='#fadbd8' />
+            <format attr='fill-color' id='refline5' value='#fdebd0' />
+            <format attr='fill-color' id='refline10' value='#d6eaf8' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.1j4wvc109m6lco12j7in21xmjipm].[usr:Calculation_1678736417103872:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='12'>&lt;</run>
+                <run fontsize='12'>[federated.1j4wvc109m6lco12j7in21xmjipm].[usr:Calculation_1678736417103872:qk]</run>
+                <run fontsize='12'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-color' value='#cc0000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{208B07EE-2386-406D-A96A-88E1E728B9E2}' />
+    </worksheet>
+    <worksheet name='KPI - Unemployment Rate'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='12'>Unemployment Rate</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='12'>February 2026</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='provincial_labour_force' name='federated.1j4wvc109m6lco12j7in21xmjipm' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1j4wvc109m6lco12j7in21xmjipm'>
+            <column datatype='string' name='[Data type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[GEO]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Labour force characteristics]' role='dimension' type='nominal' />
+            <column caption='Ref Date' datatype='date' name='[REF_DATE]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Statistics]' role='dimension' type='nominal' />
+            <column caption='Value' datatype='real' name='[VALUE]' role='measure' type='quantitative' />
+            <column-instance column='[VALUE]' derivation='Avg' name='[avg:VALUE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Data type]' derivation='None' name='[none:Data type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[GEO]' derivation='None' name='[none:GEO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Labour force characteristics]' derivation='None' name='[none:Labour force characteristics:nk]' pivot='key' type='nominal' />
+            <column-instance column='[REF_DATE]' derivation='None' name='[none:REF_DATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Statistics]' derivation='None' name='[none:Statistics:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]' context='true'>
+            <groupfilter function='member' level='[none:Data type:nk]' member='&quot;Seasonally adjusted&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]' context='true'>
+            <groupfilter function='member' level='[none:GEO:nk]' member='&quot;Canada&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]'>
+            <groupfilter function='member' level='[none:Labour force characteristics:nk]' member='&quot;Unemployment rate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' included-values='in-range'>
+            <min>#2026-02-01#</min>
+            <max>#2026-02-01#</max>
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]' context='true'>
+            <groupfilter function='member' level='[none:Statistics:nk]' member='&quot;Estimate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' value='*0.0&quot;%&quot;&quot;' />
+            <format attr='text-align' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' value='center' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='background-color' id='refline0' value='#ffffff00' />
+            <format attr='text-orientation' id='refline0' value='-90' />
+            <format attr='text-align' id='refline0' value='right' />
+            <format attr='vertical-align' id='refline0' value='bottom' />
+            <format attr='background-color' id='refline2' value='#ffffff00' />
+            <format attr='text-orientation' id='refline2' value='-90' />
+            <format attr='background-color' id='refline5' value='#ffffff00' />
+            <format attr='text-orientation' id='refline5' value='-90' />
+            <format attr='background-color' id='refline10' value='#ffffff00' />
+            <format attr='text-orientation' id='refline10' value='-90' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='fill-color' id='refline0' value='#e8daef' />
+            <format attr='fill-color' id='refline2' value='#fadbd8' />
+            <format attr='fill-color' id='refline5' value='#fdebd0' />
+            <format attr='fill-color' id='refline10' value='#d6eaf8' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='12'>&lt;</run>
+                <run fontsize='12'>[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]</run>
+                <run fontsize='12'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#cc0000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{F6844E8B-2AE9-4A1E-99E0-B661214E02A2}' />
+    </worksheet>
+    <worksheet name='Participation Rate Trend'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='12'>Labour Force Participation Rate</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='provincial_labour_force' name='federated.1j4wvc109m6lco12j7in21xmjipm' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1j4wvc109m6lco12j7in21xmjipm'>
+            <column datatype='string' name='[Data type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[GEO]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Labour force characteristics]' role='dimension' type='nominal' />
+            <column caption='Ref Date' datatype='date' name='[REF_DATE]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Statistics]' role='dimension' type='nominal' />
+            <column caption='Value' datatype='real' name='[VALUE]' role='measure' type='quantitative' />
+            <column-instance column='[VALUE]' derivation='Avg' name='[avg:VALUE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Data type]' derivation='None' name='[none:Data type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[GEO]' derivation='None' name='[none:GEO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Labour force characteristics]' derivation='None' name='[none:Labour force characteristics:nk]' pivot='key' type='nominal' />
+            <column-instance column='[REF_DATE]' derivation='None' name='[none:REF_DATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Statistics]' derivation='None' name='[none:Statistics:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]' context='true'>
+            <groupfilter function='member' level='[none:Data type:nk]' member='&quot;Seasonally adjusted&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]' context='true'>
+            <groupfilter function='member' level='[none:GEO:nk]' member='&quot;Canada&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]'>
+            <groupfilter function='member' level='[none:Labour force characteristics:nk]' member='&quot;Participation rate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]' context='true'>
+            <groupfilter function='member' level='[none:Statistics:nk]' member='&quot;Estimate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' scope='rows' value='Participation Rate (%)' />
+            <format attr='title' class='0' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' scope='cols' value='' />
+            <encoding attr='space' class='0' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' field-type='quantitative' min='58.0' range-type='fixedmin' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='background-color' id='refline0' value='#ffffff00' />
+            <format attr='text-orientation' id='refline0' value='-90' />
+            <format attr='text-align' id='refline0' value='right' />
+            <format attr='vertical-align' id='refline0' value='bottom' />
+            <format attr='background-color' id='refline2' value='#ffffff00' />
+            <format attr='text-orientation' id='refline2' value='-90' />
+            <format attr='background-color' id='refline5' value='#ffffff00' />
+            <format attr='text-orientation' id='refline5' value='-90' />
+            <format attr='background-color' id='refline10' value='#ffffff00' />
+            <format attr='text-orientation' id='refline10' value='-90' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='fill-color' id='refline0' value='#e8daef' />
+            <format attr='fill-color' id='refline2' value='#fadbd8' />
+            <format attr='fill-color' id='refline5' value='#fdebd0' />
+            <format attr='fill-color' id='refline10' value='#d6eaf8' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline0' label='Dot-com Recession' label-type='custom' paired-id='refline1' scope='per-pane' symmetric='false' value='#2001-03-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='1' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline1' label-type='none' paired-id='refline0' scope='per-pane' symmetric='false' value='#2002-12-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='2' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline10' label='Rate Hike Cycle' label-type='custom' paired-id='refline8' scope='per-pane' symmetric='false' value='#2022-03-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='8' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline2' label='Global Financial Crisis' label-type='custom' paired-id='refline4' scope='per-pane' symmetric='false' value='#2008-09-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='3' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline4' label-type='none' paired-id='refline2' scope='per-pane' symmetric='false' value='#2009-10-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='4' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline5' label='COVID-19' label-type='custom' paired-id='refline7' scope='per-pane' symmetric='false' value='#2020-03-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='5' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline7' label-type='none' paired-id='refline5' scope='per-pane' symmetric='false' value='#2021-09-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='6' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline8' label-type='none' paired-id='refline10' scope='per-pane' symmetric='false' value='#2023-07-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='7' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#cc0000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]</rows>
+        <cols>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</cols>
+      </table>
+      <simple-id uuid='{B96BD7D0-24D4-4697-890A-4AB03DC1E816}' />
+    </worksheet>
+    <worksheet name='Unemployment Rate Trend'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='12'>Unemployment Rate Trend</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='provincial_labour_force' name='federated.1j4wvc109m6lco12j7in21xmjipm' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1j4wvc109m6lco12j7in21xmjipm'>
+            <column datatype='string' name='[Data type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[GEO]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Labour force characteristics]' role='dimension' type='nominal' />
+            <column caption='Ref Date' datatype='date' name='[REF_DATE]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Statistics]' role='dimension' type='nominal' />
+            <column caption='Value' datatype='real' name='[VALUE]' role='measure' type='quantitative' />
+            <column-instance column='[VALUE]' derivation='Avg' name='[avg:VALUE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Data type]' derivation='None' name='[none:Data type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[GEO]' derivation='None' name='[none:GEO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Labour force characteristics]' derivation='None' name='[none:Labour force characteristics:nk]' pivot='key' type='nominal' />
+            <column-instance column='[REF_DATE]' derivation='None' name='[none:REF_DATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Statistics]' derivation='None' name='[none:Statistics:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]' context='true'>
+            <groupfilter function='member' level='[none:Data type:nk]' member='&quot;Seasonally adjusted&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]' context='true'>
+            <groupfilter function='member' level='[none:GEO:nk]' member='&quot;Canada&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]'>
+            <groupfilter function='member' level='[none:Labour force characteristics:nk]' member='&quot;Unemployment rate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' included-values='in-range'>
+            <min>#2000-01-01#</min>
+            <max>#2026-02-01#</max>
+          </filter>
+          <filter class='categorical' column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]' context='true'>
+            <groupfilter function='member' level='[none:Statistics:nk]' member='&quot;Estimate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</column>
+            <column>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]' scope='rows' value='Unemployment Rate (%)' />
+            <format attr='title' class='0' field='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' scope='cols' value='' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='background-color' id='refline0' value='#ffffff00' />
+            <format attr='text-orientation' id='refline0' value='-90' />
+            <format attr='text-align' id='refline0' value='right' />
+            <format attr='vertical-align' id='refline0' value='bottom' />
+            <format attr='background-color' id='refline2' value='#ffffff00' />
+            <format attr='text-orientation' id='refline2' value='-90' />
+            <format attr='background-color' id='refline5' value='#ffffff00' />
+            <format attr='text-orientation' id='refline5' value='-90' />
+            <format attr='background-color' id='refline10' value='#ffffff00' />
+            <format attr='text-orientation' id='refline10' value='-90' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='fill-color' id='refline0' value='#e8daef' />
+            <format attr='fill-color' id='refline2' value='#fadbd8' />
+            <format attr='fill-color' id='refline5' value='#fdebd0' />
+            <format attr='fill-color' id='refline10' value='#d6eaf8' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline0' label='Dot-com Recession' label-type='custom' paired-id='refline1' scope='per-pane' symmetric='false' value='#2001-03-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='1' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline1' label-type='none' paired-id='refline0' scope='per-pane' symmetric='false' value='#2002-12-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='2' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline10' label='Rate Hike Cycle' label-type='custom' paired-id='refline8' scope='per-pane' symmetric='false' value='#2022-03-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='8' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline2' label='Global Financial Crisis' label-type='custom' paired-id='refline4' scope='per-pane' symmetric='false' value='#2008-09-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='3' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline4' label-type='none' paired-id='refline2' scope='per-pane' symmetric='false' value='#2009-10-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='4' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline5' label='COVID-19' label-type='custom' paired-id='refline7' scope='per-pane' symmetric='false' value='#2020-03-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='5' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline7' label-type='none' paired-id='refline5' scope='per-pane' symmetric='false' value='#2021-09-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='6' />
+            <reference-line axis-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' enable-instant-analytics='true' formula='constant' id='refline8' label-type='none' paired-id='refline10' scope='per-pane' symmetric='false' value='#2023-07-01#' value-column='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' z-order='7' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#cc0000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1j4wvc109m6lco12j7in21xmjipm].[avg:VALUE:qk]</rows>
+        <cols>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</cols>
+      </table>
+      <simple-id uuid='{CDBEA9DE-B82B-4485-AA78-1D9E4E838733}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1 - National Pulse'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='16'>Canada Labour Market Overview, 2000–Feb. 2026</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#ffffff' />
+        </style-rule>
+        <style-rule element='dash-title'>
+          <format attr='border-color' value='#000000' />
+          <format attr='border-width' value='0' />
+          <format attr='border-style' value='none' />
+        </style-rule>
+      </style>
+      <size maxheight='800' maxwidth='1200' minheight='800' minwidth='1200' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='18' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
+            <zone h='4875' id='19' type-v2='title' w='98666' x='667' y='1000'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='93125' id='13' param='horz' type-v2='layout-flow' w='98666' x='667' y='5875'>
+              <zone h='93125' id='11' type-v2='layout-basic' w='98666' x='667' y='5875'>
+                <zone h='13321' id='3' name='KPI - Unemployment Rate' w='24665' x='667' y='5875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='5' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#d6eaf8' />
+                  </zone-style>
+                </zone>
+                <zone h='13321' id='5' name='KPI - Participation Rate' w='24666' x='49999' y='5875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='5' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#d6eaf8' />
+                  </zone-style>
+                </zone>
+                <zone h='13321' id='6' name='KPI - Total Employment' w='24668' x='74665' y='5875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='5' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#d6eaf8' />
+                  </zone-style>
+                </zone>
+                <zone h='13321' id='7' name='KPI - Employment Rate' w='24667' x='25332' y='5875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='5' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#d6eaf8' />
+                  </zone-style>
+                </zone>
+                <zone h='43136' id='10' name='Employment Trend' w='49333' x='667' y='19196'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='36668' id='15' name='Unemployment Rate Trend' w='98666' x='667' y='62332'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='43136' id='16' name='Participation Rate Trend' w='49333' x='50000' y='19196'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Courier New' fontsize='16'>Canada Labour Market Overview, 2000–Feb. 2026</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1400' minheight='1400' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='27' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='26' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
+                <zone h='4875' id='19' type-v2='title' w='98666' x='667' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='97' h='13321' id='3' is-fixed='true' name='KPI - Unemployment Rate' w='24665' x='667' y='5875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='5' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#d6eaf8' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='97' h='13321' id='7' is-fixed='true' name='KPI - Employment Rate' w='24667' x='25332' y='5875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='5' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#d6eaf8' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='97' h='13321' id='5' is-fixed='true' name='KPI - Participation Rate' w='24666' x='49999' y='5875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='5' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#d6eaf8' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='97' h='13321' id='6' is-fixed='true' name='KPI - Total Employment' w='24668' x='74665' y='5875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='5' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#d6eaf8' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='43136' id='10' is-fixed='true' name='Employment Trend' w='49333' x='667' y='19196'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='43136' id='16' is-fixed='true' name='Participation Rate Trend' w='49333' x='50000' y='19196'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36668' id='15' is-fixed='true' name='Unemployment Rate Trend' w='98666' x='667' y='62332'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{E0CF3319-8AA2-422E-A914-EE1E62B6F29A}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Unemployment Rate Trend'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[yr:REF_DATE:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{576C41DB-91FF-4354-99F6-37A67876A373}' />
+    </window>
+    <window class='worksheet' name='Employment Trend'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[yr:REF_DATE:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{4F145286-243D-4633-A879-011229E0002C}' />
+    </window>
+    <window class='worksheet' name='Participation Rate Trend'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[yr:REF_DATE:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{CCE40C56-51E3-4D73-A12A-0496F8623FA6}' />
+    </window>
+    <window class='worksheet' name='KPI - Unemployment Rate'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[yr:REF_DATE:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F1CF38AB-24B9-44A4-AD22-9FA241BA8036}' />
+    </window>
+    <window class='worksheet' name='KPI - Participation Rate'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[yr:REF_DATE:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{BD1BA0C4-99D2-4832-86FB-E8430069BB33}' />
+    </window>
+    <window class='worksheet' name='KPI - Total Employment'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[usr:Calculation_1678736417103872:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>21037300.0</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[yr:REF_DATE:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{CF65BA98-4C86-4244-889F-D04962092AA2}' />
+    </window>
+    <window class='worksheet' name='KPI - Employment Rate'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Data type:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:GEO:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:REF_DATE:qk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Statistics:nk]</field>
+            <field>[federated.1j4wvc109m6lco12j7in21xmjipm].[yr:REF_DATE:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{083FEE5E-6866-4322-B007-4E13FB09170C}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1 - National Pulse'>
+      <viewpoints>
+        <viewpoint name='Employment Trend'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.1j4wvc109m6lco12j7in21xmjipm].[none:Labour force characteristics:nk]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='KPI - Employment Rate'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='KPI - Participation Rate'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='KPI - Total Employment'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='KPI - Unemployment Rate'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Participation Rate Trend'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Unemployment Rate Trend'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{AA0905D2-0FFA-4FDC-A441-35D0CD8E592E}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1 - National Pulse' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Employment Trend' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='32' name='KPI - Employment Rate' width='84'>
+      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
+      TkSuQmCC
+    </thumbnail>
+    <thumbnail height='32' name='KPI - Participation Rate' width='84'>
+      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
+      mBkmLSjD/AMxe4b03s4bRwAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='32' name='KPI - Total Employment' width='124'>
+      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
+    </thumbnail>
+    <thumbnail height='32' name='KPI - Unemployment Rate' width='64'>
+      iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAAFAUlEQVRoge2Y30tTfxjHX1seXdOYziURJRYiYYt2E1hIBcopL0QwIiOIIIio6EISw6CI
+      oD+giy7CGV2sxFCKLqy7fkk1KhkLQy+GIwUrm612drY1z/O9iEbn64/vcsL4ku+rw/P5PM/z
+      5n2e5zmfz7GIiPAXw5pvAvnGigD5JpBvrAiQbwL5xooA+SaQb6wIkG8C+caKAPkmkG+sCJBv
+      AvlGwXIFSiQSDA0N8eLFCwoLC9m1axc7duygqKhoUT/DMPj69SvpdHphkgUFlJaWYrX+fF/x
+      eJzXr1+TSCTweDxUVFTM66dpGrqu43Q6M77/hmU5rsNDQ0NcunQJRVHYvn07AIFAAEVR6O7u
+      XpDgL5JnzpwhGAwuuMfj8XDt2jXsdjsTExOcPXuWNWvW4HQ6CQaDnDt3jv3795t8dF2no6OD
+      nTt3cuTIkYXJS44IBoOiqqrcvHlTZmdnM/bZ2VmZnJwUXdeXHPvz589y8OBB6e/vFxGRHz9+
+      yIULF+T69euZXC9fvpTDhw/Lp0+fTL4PHjyQkydPSiwWWzRHTjMglUrR09PDnj17OHr0qKnM
+      rFYr69evx2azLTn+06dPAdi9ezcAkUiEcDhMY2NjJpfb7cZms5kqaHp6mrt373LixAmKi4sX
+      zZGTAKFQiFAoRGtr64I9tlTMzMwwMDBAS0sLLpcLgKmpKZLJJA6HI7OvuLiYiooKxsfHM7aB
+      gQHq6uoy7bgYcmL99u1bXC4XlZWVuYSZF8+ePUPXdVRVzdhWrVqFxWIx7TMMA8MwcDqdAIyN
+      jREIBGhra8vqpeT0FQiFQrhcLmw2G2NjYwwODvLlyxfKy8tpbm6mqqpqyZXR19dHS0sLa9eu
+      zdg2bNjA6tWrGR8fzwzW79+/Mz09zcaNG0mn0/T29nLo0CHKyspIJpNEo1GKiopMVfM7chIg
+      Fovx/v179u3bh8Viwe12U1JSwqtXr7hz5w6qqtLV1bWkORCPx2lsbDTZHA4H9fX13Lhxg82b
+      N+NwOPD5fNjtdmpra3nz5g0lJSXU19fz8OFDrl69it1uR9M0Ghoa6OrqorCw0JxoySNaRDo7
+      O6Wzs3PB9Vu3bsmxY8f+cxL/G48fP5ZwOPxHPl6vV3w+n4iI+Hw+6ejoMH2VHj16JKdOnZJE
+      ImHyy2kG1NTU8O3bN5LJ5LzrW7ZsIRqNomla1jF1Xef27dt/NFfevXuH3++nqakJgJGREaqr
+      q03tt27dOiKRCNFo1OSbkwBut5uJiQk+fvw473osFsNqtVJQkH2n+f1+Jicns96v6zrd3d20
+      trZSVlaWtd8v5CTA1q1bKS8vp7+/H8MwTGuGYfD8+XNqamooLS3NKp6u6/T19dHQ0JA1h8HB
+      QaxWK3v37s3YamtrGRkZMR2vp6amcDqdc4fhHzXaPBgeHhZVVcXr9UoqlRKRn6fA3t5eUVVV
+      hoeHM3s1TZP29nZpb28XTdPmxHry5Ik0NTXJ6OhoVrnD4bC0tbVJIBCYYz9w4ID4/X4REZmZ
+      mZHjx4/L/fv358TI+TLk8Xi4ePEiV65cwev14nA40DQNRVG4fPkyHo/nd7GJRCKZ59+RSqW4
+      d+8edXV1VFdX/2fedDpNT08P27Ztw+12m9YqKys5ffo058+fR1EU4vE4zc3Nc+4LsEyXIfhZ
+      8h8+fGB0dJSqqio2bdqEoijLEXrBfMCi54xszgHLJsD/FX/9D5G/XoB/AIgoMjMhse1oAAAA
+      AElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Participation Rate Trend' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Unemployment Rate Trend' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

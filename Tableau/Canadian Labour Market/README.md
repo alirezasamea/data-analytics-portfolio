@@ -1,7 +1,7 @@
 # Canadian Labour Market Dashboard
 An Advanced Tableau Project
 
-![Cover Page](screenshots/Cover_Page.png)
+![Cover Page](Screenshots/Cover_Page.png)
 
 ---
 
@@ -17,7 +17,7 @@ This project covers 26 years of monthly data across four Statistics Canada datas
 
 **Live Dashboard:**
 
-[![Canadian Labour Market Dashboard](screenshots/Cover_Page.png)](https://public.tableau.com/views/CanadianLabourMarketDashboard/CoverPage?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[![Canadian Labour Market Dashboard](Screenshots/Cover_Page.png)](https://public.tableau.com/views/CanadianLabourMarketDashboard/CoverPage?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 *Click the image to open the interactive dashboard on Tableau Public*
 
@@ -101,14 +101,14 @@ All four datasets are publicly available from Statistics Canada's Labour Force S
 ## Dashboard Pages
 
 ### Cover Page
-![Cover Page](screenshots/Cover_Page.png)
+![Cover Page](Screenshots/Cover_Page.png)
 
 The entry point to the workbook. Shows the project title, date range, four navigation buttons linking to each dashboard, and four live KPI cards showing the most recent February 2026 values: Unemployment Rate (6.7%), Total Employment (21,037,300), Participation Rate (64.9%), and Employment Rate (60.6%).
 
 ---
 
 ### Dashboard 1 - National Labour Market Pulse
-![Dashboard 1](screenshots/Dashboard%201%20-%20National%20Pulse.png)
+![Dashboard 1](Screenshots/Dashboard%201%20-%20National%20Pulse.png)
 
 A national-level overview of Canada's labour market from 2000 to February 2026.
 
@@ -126,7 +126,7 @@ A national-level overview of Canada's labour market from 2000 to February 2026.
 ---
 
 ### Dashboard 2 - Provincial Comparison
-![Dashboard 2](screenshots/Dashboard%202%20-%20Provincial%20Comparison.png)
+![Dashboard 2](Screenshots/Dashboard%202%20-%20Provincial%20Comparison.png)
 
 A geographic and trend comparison of unemployment rates across Canada's 10 provinces.
 
@@ -160,7 +160,7 @@ A geographic and trend comparison of unemployment rates across Canada's 10 provi
 ---
 
 ### Dashboard 3 - Industry Snapshot
-![Dashboard 3](screenshots/Dashboard%203%20-%20Industry%20Snapshot.png)
+![Dashboard 3](Screenshots/Dashboard%203%20-%20Industry%20Snapshot.png)
 
 A side-by-side view of employment size and weekly wages across 16 NAICS industries, plus an interactive trend chart.
 
@@ -191,7 +191,7 @@ A side-by-side view of employment size and weekly wages across 16 NAICS industri
 ---
 
 ### Dashboard 4 - Demographics and Age Groups
-![Dashboard 4](screenshots/Dashboard%204%20-%20Demographics.png)
+![Dashboard 4](Screenshots/Dashboard%204%20-%20Demographics.png)
 
 A demographic breakdown of Canada's labour market showing how youth, prime-age, and senior workers experience the market differently.
 

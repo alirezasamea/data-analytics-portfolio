@@ -19,9 +19,9 @@ adapt the work for their own portfolios.
 ## Tools and Skills
 
 - **Power BI** - DAX, Power Query, data modeling, interactive dashboards
+- **Tableau** - parameters, LOD expressions, dashboard actions, choropleth maps, multi-source workbooks
 - **R** - tidyverse, ggplot2, hypothesis testing, logistic regression, R Markdown
 - **Python** - pandas, numpy, matplotlib, seaborn, exploratory data analysis
-- **Tableau** - coming soon
 
 ## Projects
 
@@ -47,7 +47,10 @@ adapt the work for their own portfolios.
 
 ### Tableau
 
-Tableau projects coming soon. Dashboards will be published on Tableau Public and linked here.
+| Project | Description | Level |
+|---------|-------------|-------|
+| [Canadian Housing Market Intelligence Dashboard](Tableau/Canadian%20Housing%20Market) | 20 years of housing price data across 59 Canadian markets. Parameters, LOD expressions, dual-axis charts, and a reproducible Python data pipeline. [Live dashboard](https://public.tableau.com/app/profile/alireza.samea7416/viz/CanadianHousingMarketIntelligenceDashboardJan2005Feb2026/NationalOverview) | Advanced |
+| [Canadian Labour Market Dashboard](Tableau/Canadian%20Labour%20Market) | 26 years of labour force data across 4 Statistics Canada datasets. Provincial comparison, industry snapshot, demographics, and a cover page with live KPIs. [Live dashboard](https://public.tableau.com/views/CanadianLabourMarketDashboard/CoverPage) | Advanced |
 
 ## More Projects Coming
 
@@ -64,6 +67,9 @@ data-analytics-portfolio/
 │   └── Customer Churn Revenue Risk/
 ├── Python/
 │   └── Superstore-Sales-Analysis/
-└── R/
-    └── Hotel booking demand/
+├── R/
+│   └── Hotel booking demand/
+└── Tableau/
+    ├── Canadian Housing Market/
+    └── Canadian Labour Market/
 ```

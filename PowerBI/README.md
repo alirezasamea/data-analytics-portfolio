@@ -18,7 +18,6 @@ A great first project. The dataset is small and clean (1,470 rows), the business
 - Building a 3-page interactive dashboard
 - Conditional formatting and tooltip pages
 
-📁 [HR-Workforce-Analytics](./HR-Workforce-Analytics/)
 
 ---
 
@@ -35,7 +34,6 @@ A step up in scale and complexity. The dataset has 2.2M rows with real data qual
 - Creating a composite index measure using VAR and MAXX
 - Conditional formatting on KPI cards
 
-📁 [USA-Real-Estate-Dashboard](./USA-Real-Estate-Dataset/)
 
 ---
 
@@ -52,7 +50,6 @@ The most technically demanding project. You will build a star schema data model 
 - Building a what-if parameter for scenario analysis
 - Revenue-weighted analytical thinking
 
-📁 [Customer-Churn-Revenue-Risk](./Customer-Churn-Revenue-Risk/)
 
 ---
 

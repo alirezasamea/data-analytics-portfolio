@@ -1,3 +1,9 @@
+-- NYC Taxi Star Schema - DDL
+-- Database: nyc_taxi
+-- Tables: Dim_Vendor, Dim_RateCode, Dim_PaymentType, Dim_TaxiZone, Dim_DateTime, Fact_Trips
+-- Coverage: Yellow and Green taxi trips, January 2025 to February 2026
+
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -32,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `Dim_TaxiZone` (
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `Dim_DateTime` (
-  `datetime_id`      INT          NOT NULL,
+  `datetime_id`      INT          NOT NULL AUTO_INCREMENT,
   `pickup_datetime`  DATETIME     NOT NULL,
   `year`             SMALLINT(6)  NOT NULL,
   `month`            TINYINT(4)   NOT NULL,

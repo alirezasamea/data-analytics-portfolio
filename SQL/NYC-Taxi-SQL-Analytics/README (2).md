@@ -164,18 +164,15 @@ your machine. Progress is printed after each file.
 
 ### Step 3 - Add Performance Indexes
 
-Before running the analytical queries, add these indexes to speed up joins on the
-fact table. Run them once in MySQL Workbench:
+Before running the analytical queries, add this index to speed up joins on the
+fact table. Run it once in MySQL Workbench:
 
 ```sql
 -- Speeds up datetime joins and taxi type filters
 ALTER TABLE fact_trips ADD INDEX idx_datetime_taxi (datetime_id, taxi_type);
-
--- Speeds up zone joins for route analysis
-ALTER TABLE fact_trips ADD INDEX idx_pickup_dropoff (pickup_location_id, dropoff_location_id);
 ```
 
-Each index will take 2-5 minutes to build on 51M rows. You only need to run these once.
+This will take 2-5 minutes to build on 51M rows. You only need to run it once.
 
 ---
 
@@ -246,7 +243,6 @@ same queries in a columnar environment.
 | Advanced SQL | CTEs, window functions (LAG, RANK), percentage calculations |
 | Performance tuning | Composite indexes, query optimization, benchmarking |
 | Data quality | Identifying and documenting anomalies in real-world data |
-| Technical writing | Honest documentation of limitations and tradeoffs |
 
 ---
 

@@ -54,7 +54,7 @@ ORDER BY d.year, d.month ASC;
 -- Expected time: 5-10 minutes on 51M rows.
 -- After this, queries drop from 17-20 minutes to less than 8 minutes.
 -- ============================================================
-ALTER TABLE fact_trips ADD INDEX idx_datetime_taxi (datetime_id, taxi_type);
+-- ALTER TABLE fact_trips ADD INDEX idx_datetime_taxi (datetime_id, taxi_type);
 
 -- ============================================================
 -- Query 3: Top 10 Busiest Pickup Zones
@@ -209,27 +209,12 @@ ORDER BY total_trips DESC
 LIMIT 10;
 
 -- ============================================================
--- PERFORMANCE NOTE: This query joins fact_trips to dim_taxizone
--- twice (pickup and dropoff), making it the heaviest query in
--- this file without proper indexing.
---
--- Without index: ~2,698 seconds (45 minutes)
--- To add the index (run once):
---
--- ALTER TABLE fact_trips ADD INDEX idx_pickup_dropoff
---     (pickup_location_id, dropoff_location_id);
---
--- After index: re-run Query 8 and record the improvement.
+-- PERFORMANCE NOTE: This query took ~2,698 seconds (45 minutes)
+-- on the full 51.5M row dataset. This is a known limitation of
+-- row-based databases for analytical workloads at this scale.
+-- See Phase 2 of this project for the columnar database version.
 -- ============================================================
-ALTER TABLE fact_trips ADD INDEX idx_pickup_dropoff (pickup_location_id, dropoff_location_id);
 
--- ============================================================
--- After adding indexes and running ANALYZE TABLE, query time
--- increased to 90+ minutes -- the optimizer chose a worse
--- execution plan after the statistics update. This is a known
--- MySQL behavior where the query optimizer can make suboptimal
--- decisions on large tables with complex joins.
--- ============================================================
 -- ============================================================
 -- Query 9: Monthly Revenue Trend with Month-over-Month Change
 -- ============================================================

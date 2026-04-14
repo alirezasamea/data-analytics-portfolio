@@ -1,7 +1,7 @@
 # NYC Taxi SQL Analytics
 A Beginner-to-Advanced SQL Project
 
-![Star Schema](screenshots/ERD.png)
+![Star Schema](screenshots/ERD.png?raw=true)
 
 ---
 
@@ -72,7 +72,7 @@ NYC-Taxi-SQL-Analytics/
 The database follows a classic star schema with `fact_trips` at the center and five
 dimension tables surrounding it.
 
-![Star Schema](screenshots/ERD.png)
+![Star Schema](screenshots/ERD.png?raw=true)
 
 | Table | Type | Rows | Description |
 |---|---|---|---|

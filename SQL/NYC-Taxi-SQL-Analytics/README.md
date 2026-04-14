@@ -72,7 +72,7 @@ NYC-Taxi-SQL-Analytics/
 The database follows a classic star schema with `fact_trips` at the center and five
 dimension tables surrounding it.
 
-<img src="screenshots/ERD.png" width="700"/>
+<img src="screenshots/ERD-V2.png" width="700"/>
 
 | Table | Type | Rows | Description |
 |---|---|---|---|

@@ -1,7 +1,7 @@
 # NYC Taxi SQL Analytics
 A Beginner-to-Advanced SQL Project
 
-<img src="screenshots/ERD.png" width="700"/>
+<img src="screenshots/ERD-V2.png" width="700"/>
 
 ---
 

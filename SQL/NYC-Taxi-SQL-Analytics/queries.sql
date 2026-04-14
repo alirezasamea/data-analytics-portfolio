@@ -312,3 +312,16 @@ SELECT
 FROM zone_revenue
 ORDER BY revenue_rank
 LIMIT 10;
+
+-- ============================================================
+-- END OF QUERIES
+-- ============================================================
+-- As demonstrated by the benchmarks above, query times on this
+-- dataset range from minutes to hours in MySQL. This is expected
+-- behavior for a row-based database running analytical workloads
+-- at scale.
+--
+-- Phase 2 of this project will rebuild the same star schema and
+-- queries in a columnar database (Snowflake, BigQuery, or DuckDB)
+-- where these queries execute in seconds. See the README for details.
+-- ============================================================

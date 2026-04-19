@@ -333,5 +333,5 @@ FROM zone_revenue
 ORDER BY revenue_rank
 LIMIT 10;
 
--- MySQL Phase 1 (local):     ___
+-- MySQL Phase 1 (local):     ~7267 sec
 -- Snowflake Phase 2 (cloud): ~329 ms

@@ -320,6 +320,12 @@ These are the exact same 10 queries from MySQL Phase 1, run on the same dataset 
 
 ---
 
+## What's Next
+
+Phase 3 connects Power BI to Snowflake using DirectQuery mode, turning this star schema into a live interactive dashboard. See the [Power BI folder](https://github.com/alirezasamea/data-analytics-portfolio/tree/main/PowerBI) for the full walkthrough including how to set up the Snowflake connection.
+
+---
+
 ## About the Author
 
 **Alireza Samea**

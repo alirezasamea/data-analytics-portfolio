@@ -53,16 +53,26 @@ The most technically demanding project. You will build a star schema data model 
 
 ---
 
+### 4. NYC Taxi Analytics - Power BI on Snowflake (Cloud Project)
+**Difficulty:** Advanced | Cloud (Snowflake)
+**Business Question:** What patterns drive NYC taxi demand, revenue, and rider behavior across time, location, and trip type?
+
+The most architecturally advanced project in this folder. Rather than loading a CSV file, Power BI connects directly to a Snowflake cloud data warehouse using DirectQuery, sitting on top of a star schema loaded with 53.6 million real taxi trips. This project is Phase 3 of a three-part series - complete Phase 1 (MySQL) and Phase 2 (Snowflake) first.
+
+**What you will learn:**
+- Connecting Power BI to Snowflake using DirectQuery
+- Understanding DirectQuery vs Import mode and when each is appropriate
+- Building relationships manually from a star schema with an inactive relationship
+- Writing DAX measures that filter across dimension and fact tables
+- Understanding which DAX patterns are restricted in DirectQuery mode
+- Designing a multi-page dashboard with left panel navigation
+
+**Prerequisites:** NYC Taxi SQL Analytics (Phase 1) and NYC Taxi Analytics - Snowflake (Phase 2)
+
+---
+
 More projects will be added to this folder as the portfolio grows.
 
 ---
 
-## Skills Progression
 
-| Skill | HR Analytics | Real Estate | Customer Churn |
-|-------|-------------|-------------|----------------|
-| Power Query cleaning | Basic | Advanced | Intermediate |
-| DAX measures | Foundational | Intermediate | Advanced |
-| Data modeling | Flat table | Flat table | Star schema |
-| Visuals | Standard | Map + Scatter | Matrix + Simulator |
-| Advanced features | Tooltips, conditional formatting | Dynamic titles, quadrant analysis | What-if parameter, segmentation |

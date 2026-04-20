@@ -22,6 +22,7 @@ adapt the work for their own portfolios.
 - **Tableau** - parameters, LOD expressions, dashboard actions, choropleth maps, multi-source workbooks
 - **R** - tidyverse, ggplot2, hypothesis testing, logistic regression, R Markdown
 - **Python** - pandas, numpy, matplotlib, seaborn, exploratory data analysis
+- **SQL / Snowflake** - star schema design, ETL pipelines, window functions, CTEs, columnar data warehousing
 
 ## Projects
 
@@ -32,6 +33,14 @@ adapt the work for their own portfolios.
 | [HR Workforce Analytics](PowerBI/HR%20Workforce%20Analytics) | Attrition analysis across 1,470 employee records. KPI cards, conditional formatting, tooltip pages. | Beginner |
 | [USA Real Estate Dashboard](PowerBI/USA%20Real%20Estate%20Dataset) | Market analysis across US property listings. Dynamic titles, market quadrant analysis, Market Competitiveness Score. | Intermediate |
 | [Customer Churn Revenue Risk](PowerBI/Customer%20Churn%20Revenue%20Risk) | Churn prediction dashboard with risk segmentation and retention recommendations. | Advanced |
+| [NYC Taxi Analytics - Power BI on Snowflake](PowerBI/NYC%20Taxi%20Analytics) | 4-page dashboard on 53.6M real taxi trips via DirectQuery to Snowflake. Demand patterns, revenue intelligence, and geographic analysis. [Live dashboard](https://app.powerbi.com/links/sy3GHn2AaW?ctid=a8eec281-aaa3-4dae-ac9b-9a398b9215e7&pbi_source=linkShare) | Advanced - Cloud (Snowflake) |
+
+### SQL / Snowflake
+
+| Project | Description | Level |
+|---------|-------------|-------|
+| [NYC Taxi SQL Analytics](SQL/NYC-Taxi-SQL-Analytics) | Star schema database with 51.5M real taxi trips. Data pipeline, analytical queries, window functions, CTEs, and performance benchmarking. | Advanced |
+| [NYC Taxi Analytics - Snowflake](SQL/NYC-Taxi-Snowflake) | Same star schema rebuilt in Snowflake. Queries that took hours in MySQL run in under 3 seconds. DirectQuery foundation for Phase 3. | Advanced - Cloud (Snowflake) |
 
 ### Python
 
@@ -64,11 +73,15 @@ data-analytics-portfolio/
 ├── PowerBI/
 │   ├── HR Workforce Analytics/
 │   ├── USA Real Estate Dataset/
-│   └── Customer Churn Revenue Risk/
+│   ├── Customer Churn Revenue Risk/
+│   └── NYC Taxi Analytics/
 ├── Python/
 │   └── Superstore-Sales-Analysis/
 ├── R/
 │   └── Hotel booking demand/
+├── SQL/
+│   ├── NYC-Taxi-SQL-Analytics/
+│   └── NYC-Taxi-Snowflake/
 └── Tableau/
     ├── Canadian Housing Market/
     └── Canadian Labour Market/

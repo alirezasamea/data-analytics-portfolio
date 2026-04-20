@@ -231,27 +231,13 @@ same queries in a columnar environment.
 
 ---
 
-## Skills Demonstrated
+## Phase 2 and Phase 3
 
-| Skill | Details |
-|---|---|
-| Database design | Star schema with 5 dimension tables and 1 fact table |
-| DDL | CREATE TABLE, PRIMARY KEY, FOREIGN KEY, CHECK constraints, indexes |
-| Data pipeline | Python and pandas to download, clean, and load 51.5M rows into MySQL |
-| Basic SQL | SELECT, GROUP BY, ORDER BY, LIMIT, WHERE, JOIN |
-| Intermediate SQL | Multi-table joins, subqueries, aggregate functions |
-| Advanced SQL | CTEs, window functions (LAG, RANK), percentage calculations |
-| Performance tuning | Composite indexes, query optimization, benchmarking |
-| Data quality | Identifying and documenting anomalies in real-world data |
+This project is Part 1 of a three-part series.
 
----
+**Phase 2 - Snowflake:** The same star schema and queries rebuilt in Snowflake. Queries that took hours in MySQL run in under 3 seconds in a columnar data warehouse. [View Phase 2](https://github.com/alirezasamea/data-analytics-portfolio/tree/main/SQL/NYC-Taxi-Snowflake)
 
-## Phase 2 - Columnar Database Migration
-
-This project will be rebuilt in a second phase using a columnar database (Snowflake,
-BigQuery, or DuckDB) to demonstrate how the same star schema and analytical queries
-perform at scale in a purpose-built analytics environment. The same dataset, the same
-schema design, and the same queries: but running in seconds instead of minutes.
+**Phase 3 - Power BI on Snowflake:** A 4-page decision-maker dashboard built on top of the Snowflake warehouse using DirectQuery. Covers demand patterns, revenue intelligence, and geographic analysis across 53.6M trips. [View Phase 3](https://github.com/alirezasamea/data-analytics-portfolio/tree/main/PowerBI/NYC%20Taxi%20Analytics)
 
 ---
 

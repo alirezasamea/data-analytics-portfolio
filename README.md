@@ -21,7 +21,7 @@ adapt the work for their own portfolios.
 - **Power BI** - DAX, Power Query, data modeling, interactive dashboards
 - **Tableau** - parameters, LOD expressions, dashboard actions, choropleth maps, multi-source workbooks
 - **R** - tidyverse, ggplot2, hypothesis testing, logistic regression, R Markdown
-- **Python** - pandas, numpy, matplotlib, seaborn, exploratory data analysis
+- **Python** - pandas, numpy, matplotlib, seaborn, scikit-learn, exploratory data analysis, classification models, preprocessing pipelines
 - **SQL / Snowflake** - star schema design, ETL pipelines, window functions, CTEs, columnar data warehousing
 
 ## Projects
@@ -44,9 +44,10 @@ adapt the work for their own portfolios.
 
 ### Python
 
-| Project | Description |
-|---------|-------------|
-| [Superstore Sales Analysis](Python/Superstore-Sales-Analysis) | EDA on 9,994 sales records covering trends, profitability, regional performance, and customer segments. |
+| Project | Description | Level |
+|---------|-------------|-------|
+| [Superstore Sales Analysis](Python/Superstore%20Sales%20Analysis) | EDA on 9,994 sales records covering trends, profitability, regional performance, and customer segments. | Beginner |
+| [Bank Marketing Classification](Python/Bank%20Marketing%20Classification) | Binary classification on 41,188 bank customer records. Five models compared including Logistic Regression, Random Forest, SVM, and Neural Network. Covers class imbalance, data leakage, and preprocessing pipelines. Project 1 of the ML series. | Intermediate |
 
 ### R
 
@@ -76,7 +77,8 @@ data-analytics-portfolio/
 │   ├── Customer Churn Revenue Risk/
 │   └── NYC Taxi Analytics/
 ├── Python/
-│   └── Superstore-Sales-Analysis/
+│   ├── Superstore Sales Analysis/
+│   └── Bank Marketing Classification/
 ├── R/
 │   └── Hotel booking demand/
 ├── SQL/

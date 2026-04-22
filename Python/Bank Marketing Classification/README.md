@@ -49,7 +49,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn
 ## Project Structure
 
 ```
-Bank-Marketing-Classification/
+Bank Marketing Classification/
 ├── bank_marketing_classification.ipynb
 ├── README.md
 └── data/
